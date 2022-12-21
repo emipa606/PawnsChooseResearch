@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	<Operation Class="PatchOperationSequence">
+		<operations>
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/TraitDef[defName=""]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+				<value>
+					<progressTech>1</progressTech>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/TraitDef[defName=""]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+				<value>
+					<progressTech>-1</progressTech>
+				</value>
+			</li>
+			<!-- Tech Level -->
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/TraitDef[defName=""]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+				<value>
+					<simpleTech>-1</simpleTech>
+					<complexTech>1</complexTech>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/TraitDef[defName=""]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+				<value>
+					<complexTech>-1</complexTech>
+				</value>
+			</li>					
+			<!-- Shooting -->
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/TraitDef[defName=""]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+				<value>
+					<rangedTech>1</rangedTech>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/TraitDef[defName=""]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+				<value>
+					<rangedTech>-1</rangedTech>	
+				</value>
+			</li>
+			<!-- Melee -->
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/TraitDef[defName=""]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+				<value>
+					<meleeTech>1</meleeTech>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/TraitDef[defName=""]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+				<value>
+					<meleeTech>-1</meleeTech>
+				</value>
+			</li>
+			<!-- Construction -->
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/TraitDef[defName=""]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+				<value>
+					<constructionTech></constructionTech>
+				</value>
+			</li>	
+			<!-- Cooking-->
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/TraitDef[defName=""]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+				<value>
+					<cookingTech></cookingTech>
+				</value>
+			</li>	
+			<!-- Planting -->
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/TraitDef[defName=""]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+				<value>
+					<plantTech></plantTech>
+				</value>
+			</li>	
+			<!-- Crafting -->	
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/TraitDef[defName=""]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+				<value>
+					<craftTech>1</craftTech>
+				</value>
+			</li>		
+			<!-- Artistic -->
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/TraitDef[defName=""]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+				<value>
+					<artTech>1</artTech>
+				</value>
+			</li>
+			<!-- Medical/Drugs -->
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/TraitDef[defName=""]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+				<value>
+					<medTech>1</medTech>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/TraitDef[defName=""]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+				<value>
+					<socialTech>1</socialTech>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+</Patch>

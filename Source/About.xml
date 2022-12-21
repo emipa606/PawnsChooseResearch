@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+  <name>PawnsChooseResearch</name>
+  <author>Cozarkian</author>
+  <packageId>Cozarkian.PawnsChooseResearch</packageId>
+  <description>Eliminates the need (and ability) to micromanage research by having pawns select it for you. Each pawn now selects and tracks their own research project based on their skill passions, disabled skills, and traits. You can see what a pawn is researching on their stats page, or by inspecting the pawn while they are researching. 	
+	</description>
+  <supportedVersions>
+    <li>1.2</li>
+    <li>1.3</li>
+  </supportedVersions>
+  <modDependencies>
+    <li>
+      <packageId>brrainz.harmony</packageId>
+      <displayName>Harmony</displayName>
+      <steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl>
+      <downloadUrl>https://github.com/pardeike/HarmonyRimWorld/releases/latest</downloadUrl>
+    </li>
+  </modDependencies>
+  <loadAfter>
+    <li>kentington.saveourship2</li>
+  </loadAfter>
+</ModMetaData>

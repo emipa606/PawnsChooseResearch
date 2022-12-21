@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- Vanilla Furniture Expanded-->
+  <Operation Class="PatchOperationSequence" MayRequire="VanillaExpanded.VFECore">
+    <operations>
+      <li Class="PatchOperationAdd" MayRequire="VanillaExpanded.VFECore">
+        <xpath>Defs/ResearchProjectDef[defName="MF_BasicFurniture" or defName="MF_RoyalFurniture" or defName="MF_ModernFurniture" or defName="MF_WasteDisposal"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <craftTech>1</craftTech>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+</Patch>

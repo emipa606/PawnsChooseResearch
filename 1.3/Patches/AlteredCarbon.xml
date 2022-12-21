@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- Altered Carbon -->
+  <Operation Class="PatchOperationSequence" MayRequire="Hlx.UltratechAlteredCarbon">
+    <operations>
+      <li Class="PatchOperationAdd" MayRequire="Hlx.UltratechAlteredCarbon">
+        <xpath>Defs/ResearchProjectDef[defName="AC_SleeveProduction"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <medTech>1</medTech>
+          <cyberTech>1</cyberTech>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+</Patch>

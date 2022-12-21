@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- Vanilla Plants Expanded - Succulents -->
+  <Operation Class="PatchOperationSequence" MayRequire="VanillaExpanded.VPlantsESucculents">
+    <operations>
+      <li Class="PatchOperationAdd" MayRequire="VanillaExpanded.VPlantsESucculents">
+        <xpath>Defs/ResearchProjectDef[defName="VCE_SucculentSowing"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <plantTech>1</plantTech>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+</Patch>

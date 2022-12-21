@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- Vanilla Furniture Expanded - Security (by Veralin & Cozarkian)-->
+  <Operation Class="PatchOperationSequence" MayRequire="VanillaExpanded.VFESecurity">
+    <operations>
+      <li Class="PatchOperationAdd" MayRequire="VanillaExpanded.VFESecurity">
+        <xpath>Defs/ResearchProjectDef[defName="VFES_MetalAlloysBarricades" or defName="VFES_ConcealedDefenses" or defName="VFES_RepulsorTechnology"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <constructionTech>1</constructionTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="VanillaExpanded.VFESecurity">
+        <xpath>Defs/ResearchProjectDef[defName="VFES_SiegeEquipment" or defName="VFES_Artillery" or defName="VFES_SentryGuns" or defName="VFES_MissileBarrage" or defName="VFES_PulseChargedDefenses" or defName="VFES_Railgun" or defName="VFES_EMPCannon"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <rangedTech>1</rangedTech>
+          <craftTech>1</craftTech>
+        </value>
+      </li>
+      <li Class="PatchOperationFindMod" MayRequire="VanillaExpanded.VFESecurity">
+        <mods>
+          <li>Vanilla Weapons Expanded</li>
+        </mods>
+        <nomatch Class="PatchOperationAdd" MayRequire="VanillaExpanded.VFESecurity">
+          <xpath>Defs/ResearchProjectDef[defName="VFES_TrenchWarfare"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+          <value>
+            <rangedTech>1</rangedTech>
+            <constructionTech>1</constructionTech>
+            <miningTech>1</miningTech>
+          </value>
+        </nomatch>
+      </li>
+    </operations>
+  </Operation>
+</Patch>

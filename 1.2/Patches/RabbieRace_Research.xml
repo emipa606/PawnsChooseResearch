@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- or defName=""-->
+  <Operation Class="PatchOperationSequence" MayRequire="RunneLatki.RabbieRaceMod">
+    <!--<success>Always</success>-->
+    <operations>
+      <li Class="PatchOperationAdd" MayRequire="RunneLatki.RabbieRaceMod">
+        <xpath>Defs/ResearchProjectDef[defName="RefinePlanetarium"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <coreTech>1</coreTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="RunneLatki.RabbieRaceMod">
+        <xpath>Defs/ResearchProjectDef[defName="RBPDW" or defName="RBFieldWeapon" or defName="ElectrothermalChemical" or defName="RBEnergyweapon" or defName="RBregularweapon" or defName="RBsuperaccel"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <rangedTech>1</rangedTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="RunneLatki.RabbieRaceMod">
+        <xpath>Defs/ResearchProjectDef[defName="RBFieldGear" or defName="RBpowerarmor"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <meleeTech>1</meleeTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="RunneLatki.RabbieRaceMod">
+        <xpath>Defs/ResearchProjectDef[defName="Lunararchitecture" or defName="RefinePlanetarium"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <constructionTech>1</constructionTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="RunneLatki.RabbieRaceMod">
+        <xpath>Defs/ResearchProjectDef[defName="Planettea" or defName="Planetcocktail"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <cookingTech>1</cookingTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="RunneLatki.RabbieRaceMod">
+        <xpath>Defs/ResearchProjectDef[defName="Lunarsewing" or defName="Lunarmachining" or defName="Moonthread" or defName="EFClothing" or defName="officiaryclothing" or defName="NanoBreeder" or defName="RBMoonsilk" or defName="Specialclothing"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <craftTech>1</craftTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="RunneLatki.RabbieRaceMod">
+        <xpath>Defs/ResearchProjectDef[defName="RefinePlanetarium"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <medTech>1</medTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="RunneLatki.RabbieRaceMod">
+        <xpath>Defs/ResearchProjectDef[defName="RefinePlanetarium"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <socialTech>1</socialTech>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+</Patch>

@@ -1,0 +1,32 @@
+[10/2021]
+Fixed error with "Lush" trait from Vanilla Trait Expanded.
+Removed unnecessary logging.
+Fixed bug if researcher has 0 skill and prefers simple tech.
+
+[09/2021]
+Fixed error with trait-abhorrent research choices.
+Integrated Pawns Choose Interests for Interests (continued).
+Avoid too advanced research now has greater impact on low-skill researchers.
+Reworked selection formula.
+Support added for 1.3.
+
+[12/2020]
+Added Group Research option.
+Hospitality guests now have research stat if they start researching.
+Reworked research selection - pawns now choose multiple projects and select the one they like most.
+Integrated additional mods.
+Changed xml patch for greater compatibility.
+Started migrating patches so they only load when mod is active.
+
+[10/17/2020]
+Integrated Sparkling Worlds, Genetic Rim, and rest of Rimsenal
+
+[09/20/2020]
+Added Core Techs category to increase chances of researching prerequisite techs. Smithing, Machining, Electricity, Microelectronics, MultiAnalyzer and Starflight Basics are now core techs. Pawns will research core techs unless it also falls into a disfavored category. 
+
+Changed lowTech and highTech to simple and complex to better reflect how they are categorized (based on base research cost).
+
+With the expansion mod, PawnsChooseInterest, pawns will now consider interests that utilize the Interests Framework.
+
+[09/2020]
+Added toggle in settings to temporarily disable individual research and allow player to control technology without disabling the mod.

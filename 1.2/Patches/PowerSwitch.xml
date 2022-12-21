@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationSequence" MayRequire="Haplo.PowerSwitch">
+    <operations>
+      <li Class="PatchOperationAdd" MayRequire="Haplo.PowerSwitch">
+        <xpath>Defs/ResearchProjectDef[defName="ResearchPowerConduitsInvisible"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <constructionTech>1</constructionTech>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+</Patch>

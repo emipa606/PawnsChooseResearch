@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- EPOE -->
+  <Operation Class="PatchOperationSequence" MayRequire="vat.epoeforked">
+    <operations>
+      <li Class="PatchOperationAdd" MayRequire="vat.epoeforked">
+        <xpath>Defs/ResearchProjectDef[defName="BasicProsthetics" or defName="SurrogateOrgans" or defName="BrainSurgery" or defName="RibReplacements" or defName="AdvancedBionics" or defName="BionicSpine" or defName="AdvancedBionicSpine" or defName="SyntheticOrgans" or defName="AdvancedBrainSurgery"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <medTech>1</medTech>
+          <cyberTech>1</cyberTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="vat.epoeforked">
+        <xpath>Defs/ResearchProjectDef[defName="BionicWarfare" or defName="AdvancedBionicWarfare" or defName="ExoskeletonSuits"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <meleeTech>1</meleeTech>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+  <Operation Class="PatchOperationSequence" MayRequire="Ykara.elStrages.EPOE">
+    <operations>
+      <li Class="PatchOperationAdd" MayRequire="Ykara.elStrages.EPOE">
+        <xpath>Defs/ResearchProjectDef[defName="BasicProsthetics" or defName="SurrogateOrgans" or defName="BrainSurgery" or defName="RibReplacements" or defName="AdvancedBionics" or defName="BionicSpine" or defName="AdvancedBionicSpine" or defName="SyntheticOrgans" or defName="AdvancedBrainSurgery"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <medTech>1</medTech>
+          <cyberTech>1</cyberTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="Ykara.elStrages.EPOE">
+        <xpath>Defs/ResearchProjectDef[defName="BionicWarfare" or defName="AdvancedBionicWarfare" or defName="ExoskeletonSuits"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <meleeTech>1</meleeTech>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+</Patch>

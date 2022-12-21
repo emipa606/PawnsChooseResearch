@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- or defName="PNRP_"-->
+  <Operation Class="PatchOperationSequence" MayRequire="AhnDemi.PanieltheAutomata">
+    <!--<success>Always</success>-->
+    <operations>
+      <li Class="PatchOperationAdd" MayRequire="AhnDemi.PanieltheAutomata">
+        <xpath>Defs/ResearchProjectDef[defName="PNRP_Production"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <coreTech>1</coreTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="AhnDemi.PanieltheAutomata">
+        <xpath>Defs/ResearchProjectDef[defName="PNRP_AutomatonWeapons" or defName="PNRP_MachineGun" or defName="PNRP_Cannon" or defName="PNRP_AutoArtillery" or defName="PNRP_RoyalWeapons"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <rangedTech>1</rangedTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="AhnDemi.PanieltheAutomata">
+        <xpath>Defs/ResearchProjectDef[defName="PNRP_TierA_Apparel"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <meleeTech>1</meleeTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="AhnDemi.PanieltheAutomata">
+        <xpath>Defs/ResearchProjectDef[defName="PNRP_Production" or defName="PNRP_TierB_Apparel" or defName="PNRP_TierC_Apparel"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <craftTech>1</craftTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="AhnDemi.PanieltheAutomata">
+        <xpath>Defs/ResearchProjectDef[defName="PNRP_Brain" or defName="PNRP_BrainCasing" or defName="PNRP_ExperimentalModule" ]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <medTech>1</medTech>
+          <cyberTech>1</cyberTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="AhnDemi.PanieltheAutomata">
+        <xpath>Defs/ResearchProjectDef[defName="PNRP_SelfRepairKit" or defName="PNRP_ResurrectModule"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <medTech>1</medTech>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+</Patch>

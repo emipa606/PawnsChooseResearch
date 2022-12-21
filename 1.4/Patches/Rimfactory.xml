@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationSequence" MayRequire="spdskatr.projectrimfactory">
+    <operations>
+      <li Class="PatchOperationAdd" MayRequire="spdskatr.projectrimfactory">
+        <xpath>Defs/ResearchProjectDef[@ParentName="PRF_CommonResearch"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <coreTech>1</coreTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="spdskatr.projectrimfactory">
+        <xpath>Defs/ResearchProjectDef[@ParentName="PRF_BatteriesResearch" or @ParentName="PRF_BeltsResearch"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <constructionTech>1</constructionTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="spdskatr.projectrimfactory">
+        <xpath>Defs/ResearchProjectDef[@ParentName="PRF_MiningResearch" or defName="PRF_MetalRefining"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <miningTech>1</miningTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="spdskatr.projectrimfactory">
+        <xpath>Defs/ResearchProjectDef[defName="PRF_SelfCooking" or defName="PRF_SelfCookingII" or defName="PRF_SalResearchVII"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <cookingTech>1</cookingTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="spdskatr.projectrimfactory">
+        <xpath>Defs/ResearchProjectDef[@ParentName="PRF_CultivatorResearch"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <plantTech>1</plantTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="spdskatr.projectrimfactory">
+        <xpath>Defs/ResearchProjectDef[@ParentName="PRF_DroneResearch" or defName="PRF_MagneticTape" or defName="PRF_UniversalAutocrafting" or defName="PRF_SalResearchI" or defName="PRF_SalResearchII" or defName="PRF_SalResearchIII"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <craftTech>1</craftTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="spdskatr.projectrimfactory">
+        <xpath>Defs/ResearchProjectDef[defName="PRF_SalResearchIV" or defName="PRF_SalResearchV" or defName="PRF_SalResearchVI"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <artTech>1</artTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="spdskatr.projectrimfactory">
+        <xpath>Defs/ResearchProjectDef[defName="PRF_MachineLearning" or defName="PRF_SelfCorrectingAssemblers"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <socialTech>1</socialTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="spdskatr.projectrimfactory">
+        <xpath>Defs/ResearchProjectDef[@ParentName="PRF_AnimalStationResearch"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <animalTech>1</animalTech>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+</Patch>
