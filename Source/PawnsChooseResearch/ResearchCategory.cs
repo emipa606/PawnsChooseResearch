@@ -15,6 +15,7 @@ public class ResearchCategory : DefModExtension
     public int constructionTech = 0;
 
     public int cookingTech = 0;
+
     public int coreTech = 0;
 
     public int craftTech = 0;
@@ -41,9 +42,93 @@ public class ResearchCategory : DefModExtension
 
     public override string ToString()
     {
-        return
-            $"animalTech: {animalTech}, artTech: {artTech}, complexTech: {complexTech}, constructionTech: {constructionTech}, cookingTech: {cookingTech}, coreTech: {coreTech}, craftTech: {craftTech}, rangedTech: {rangedTech}, " +
-            $"cyberTech: {cyberTech}, drugTech: {drugTech}, medTech: {medTech}, meleeTech: {meleeTech}, miningTech: {miningTech}, neverTech: {neverTech}, plantTech: {plantTech}, progressTech: {progressTech}, socialTech: {socialTech}";
+        var returnValue = "";
+        if (animalTech != 0)
+        {
+            returnValue += $"animalTech: {animalTech} ";
+        }
+
+        if (artTech != 0)
+        {
+            returnValue += $"artTech: {artTech} ";
+        }
+
+        if (complexTech != 0)
+        {
+            returnValue += $"complexTech: {complexTech} ";
+        }
+
+        if (constructionTech != 0)
+        {
+            returnValue += $"constructionTech: {constructionTech} ";
+        }
+
+        if (cookingTech != 0)
+        {
+            returnValue += $"cookingTech: {cookingTech} ";
+        }
+
+        if (coreTech != 0)
+        {
+            returnValue += $"coreTech: {coreTech} ";
+        }
+
+        if (craftTech != 0)
+        {
+            returnValue += $"craftTech: {craftTech} ";
+        }
+
+        if (rangedTech != 0)
+        {
+            returnValue += $"rangedTech: {rangedTech} ";
+        }
+
+        if (cyberTech != 0)
+        {
+            returnValue += $"cyberTech: {cyberTech} ";
+        }
+
+        if (drugTech != 0)
+        {
+            returnValue += $"drugTech: {drugTech} ";
+        }
+
+        if (medTech != 0)
+        {
+            returnValue += $"medTech: {medTech} ";
+        }
+
+        if (meleeTech != 0)
+        {
+            returnValue += $"meleeTech: {meleeTech} ";
+        }
+
+        if (miningTech != 0)
+        {
+            returnValue += $"miningTech: {miningTech} ";
+        }
+
+        if (neverTech != 0)
+        {
+            returnValue += $"neverTech: {neverTech} ";
+        }
+
+        if (plantTech != 0)
+        {
+            returnValue += $"plantTech: {plantTech} ";
+        }
+
+        if (progressTech != 0)
+        {
+            returnValue += $"progressTech: {progressTech} ";
+        }
+
+        if (socialTech != 0)
+        {
+            returnValue += $"socialTech: {socialTech} ";
+        }
+
+        return returnValue;
     }
 
     public static void CategoryCheck()

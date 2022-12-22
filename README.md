@@ -139,3 +139,4 @@ Except for research project assignment, this mod leaves the vanilla research sys
 -  If you have the solution for a problem, please post it to the GitHub repository.
 
 
+https://steamcommunity.com/sharedfiles/filedetails/changelog/2904905818]Last updated 2022-12-22
