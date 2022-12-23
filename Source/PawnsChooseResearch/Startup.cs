@@ -22,6 +22,11 @@ public class Startup
 
         foreach (var projectDef in DefDatabase<ResearchProjectDef>.AllDefs)
         {
+            if (projectDef == null)
+            {
+                continue;
+            }
+
             var category = projectDef.GetModExtension<ResearchCategory>();
             if (category != null && category.IsSetToSomething())
             {
@@ -40,109 +45,141 @@ public class Startup
 
     private static void EvaluateResearchProject(ResearchProjectDef projectDef)
     {
-        if (projectDef.UnlockedDefs == null || !projectDef.UnlockedDefs.Any())
+        try
         {
-            LogMessage($"{projectDef.LabelCap} does not unlock anything, counts as progress");
-            projectDef.GetModExtension<ResearchCategory>().progressTech = 1;
-            changedProjects++;
-            return;
-        }
-
-        var researchValueDictionary = new Dictionary<ResearchType, int>();
-        foreach (var def in projectDef.UnlockedDefs)
-        {
-            var thingEnum = EvaluateThing(def);
-            if (thingEnum == ResearchType.None)
+            var modExtension = projectDef.GetModExtension<ResearchCategory>();
+            if (modExtension == null)
             {
-                continue;
+                if (projectDef.modExtensions == null)
+                {
+                    projectDef.modExtensions = new List<DefModExtension>();
+                }
+
+                projectDef.modExtensions?.Add(new ResearchCategory());
             }
 
-            if (researchValueDictionary.ContainsKey(thingEnum))
+            modExtension = projectDef.GetModExtension<ResearchCategory>();
+            if (modExtension == null)
             {
-                researchValueDictionary[thingEnum]++;
-                continue;
+                LogMessage($"{projectDef.LabelCap} does not have a mod-extension. This shouldnt happen", true);
+                return;
             }
 
-            researchValueDictionary[thingEnum] = 1;
-        }
+            if (projectDef.UnlockedDefs == null || !projectDef.UnlockedDefs.Any())
+            {
+                LogMessage($"{projectDef.LabelCap} does not unlock anything, counts as progress");
+                modExtension.progressTech = 1;
+                changedProjects++;
+                return;
+            }
 
-        if (!researchValueDictionary.Any())
+            var researchValueDictionary = new Dictionary<ResearchType, int>();
+            foreach (var def in projectDef.UnlockedDefs)
+            {
+                LogMessage($"Evaluating {def.LabelCap}");
+                var thingEnum = EvaluateThing(def);
+                if (thingEnum == ResearchType.None)
+                {
+                    continue;
+                }
+
+                if (researchValueDictionary.ContainsKey(thingEnum))
+                {
+                    researchValueDictionary[thingEnum]++;
+                    continue;
+                }
+
+                researchValueDictionary[thingEnum] = 1;
+            }
+
+            if (!researchValueDictionary.Any())
+            {
+                LogMessage($"{projectDef.LabelCap} could not be figured out");
+                return;
+            }
+
+            var bestValue = researchValueDictionary.OrderByDescending(pair => pair.Value).ThenBy(pair => pair.Key)
+                .First()
+                .Key;
+            var changed = true;
+            switch (bestValue)
+            {
+                case ResearchType.Animals:
+                    modExtension.animalTech = 1;
+                    break;
+                case ResearchType.Art:
+                    modExtension.artTech = 1;
+                    break;
+                case ResearchType.ComplexTech:
+                    modExtension.complexTech = 1;
+                    break;
+                case ResearchType.Construction:
+                    modExtension.constructionTech = 1;
+                    break;
+                case ResearchType.Cooking:
+                    modExtension.cookingTech = 1;
+                    break;
+                case ResearchType.Core:
+                    modExtension.coreTech = 1;
+                    break;
+                case ResearchType.Crafting:
+                    modExtension.craftTech = 1;
+                    break;
+                case ResearchType.Cyber:
+                    modExtension.cyberTech = 1;
+                    break;
+                case ResearchType.Drug:
+                    modExtension.drugTech = 1;
+                    break;
+                case ResearchType.Medical:
+                    modExtension.medTech = 1;
+                    break;
+                case ResearchType.Melee:
+                    modExtension.meleeTech = 1;
+                    break;
+                case ResearchType.Mining:
+                    modExtension.miningTech = 1;
+                    break;
+                case ResearchType.Never:
+                    modExtension.neverTech = 1;
+                    break;
+                case ResearchType.Plants:
+                    modExtension.plantTech = 1;
+                    break;
+                case ResearchType.Progress:
+                    modExtension.progressTech = 1;
+                    break;
+                case ResearchType.Ranged:
+                    modExtension.rangedTech = 1;
+                    break;
+                case ResearchType.Social:
+                    modExtension.socialTech = 1;
+                    break;
+                default:
+                    changed = false;
+                    break;
+            }
+
+            if (changed)
+            {
+                changedProjects++;
+            }
+
+            LogMessage($"{projectDef.LabelCap} set to {bestValue}");
+        }
+        catch (Exception exception)
         {
-            LogMessage($"{projectDef.LabelCap} could not be figured out");
-            return;
+            LogMessage($"{projectDef.LabelCap} failed to figure out: {exception}");
         }
-
-        var bestValue = researchValueDictionary.OrderByDescending(pair => pair.Value).ThenBy(pair => pair.Key).First()
-            .Key;
-        var changed = true;
-        switch (bestValue)
-        {
-            case ResearchType.Animals:
-                projectDef.GetModExtension<ResearchCategory>().animalTech = 1;
-                break;
-            case ResearchType.Art:
-                projectDef.GetModExtension<ResearchCategory>().artTech = 1;
-                break;
-            case ResearchType.ComplexTech:
-                projectDef.GetModExtension<ResearchCategory>().complexTech = 1;
-                break;
-            case ResearchType.Construction:
-                projectDef.GetModExtension<ResearchCategory>().constructionTech = 1;
-                break;
-            case ResearchType.Cooking:
-                projectDef.GetModExtension<ResearchCategory>().cookingTech = 1;
-                break;
-            case ResearchType.Core:
-                projectDef.GetModExtension<ResearchCategory>().coreTech = 1;
-                break;
-            case ResearchType.Crafting:
-                projectDef.GetModExtension<ResearchCategory>().craftTech = 1;
-                break;
-            case ResearchType.Cyber:
-                projectDef.GetModExtension<ResearchCategory>().cyberTech = 1;
-                break;
-            case ResearchType.Drug:
-                projectDef.GetModExtension<ResearchCategory>().drugTech = 1;
-                break;
-            case ResearchType.Medical:
-                projectDef.GetModExtension<ResearchCategory>().medTech = 1;
-                break;
-            case ResearchType.Melee:
-                projectDef.GetModExtension<ResearchCategory>().meleeTech = 1;
-                break;
-            case ResearchType.Mining:
-                projectDef.GetModExtension<ResearchCategory>().miningTech = 1;
-                break;
-            case ResearchType.Never:
-                projectDef.GetModExtension<ResearchCategory>().neverTech = 1;
-                break;
-            case ResearchType.Plants:
-                projectDef.GetModExtension<ResearchCategory>().plantTech = 1;
-                break;
-            case ResearchType.Progress:
-                projectDef.GetModExtension<ResearchCategory>().progressTech = 1;
-                break;
-            case ResearchType.Ranged:
-                projectDef.GetModExtension<ResearchCategory>().rangedTech = 1;
-                break;
-            case ResearchType.Social:
-                projectDef.GetModExtension<ResearchCategory>().socialTech = 1;
-                break;
-            default:
-                changed = false;
-                break;
-        }
-
-        if (changed)
-        {
-            changedProjects++;
-        }
-
-        LogMessage($"{projectDef.LabelCap} set to {bestValue}");
     }
 
     private static ResearchType EvaluateThing(Def def)
     {
+        if (def == null)
+        {
+            return ResearchType.None;
+        }
+
         try
         {
             if (def is not ThingDef thingDef)
@@ -167,12 +204,10 @@ public class Startup
 
             if (thingDef.IsApparel)
             {
-                if (thingDef.costList?.Any(resource => resource.thingDef.defName.Contains("Component")) == true)
-                {
-                    return ResearchType.Cyber;
-                }
-
-                return ResearchType.Crafting;
+                return thingDef.costList?.Any(resource => resource.thingDef?.defName.Contains("Component") == true) ==
+                       true
+                    ? ResearchType.Cyber
+                    : ResearchType.Crafting;
             }
 
             if (thingDef.IsRangedWeapon)
@@ -282,6 +317,14 @@ public class Startup
                 if (thingDef.defName.StartsWith("Gene"))
                 {
                     return ResearchType.Medical;
+                }
+
+                if (thingDef.StatBaseDefined(StatDefOf.Beauty) &&
+                    thingDef.GetStatValueAbstract(StatDefOf.Beauty) > 25 ||
+                    thingDef.StatBaseDefined(StatDefOf.BeautyOutdoors) &&
+                    thingDef.GetStatValueAbstract(StatDefOf.BeautyOutdoors) > 25)
+                {
+                    return ResearchType.Art;
                 }
 
                 return ResearchType.Construction;

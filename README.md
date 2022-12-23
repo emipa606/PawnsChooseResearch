@@ -124,9 +124,6 @@ Vanilla Traits Expanded
 
 Except for research project assignment, this mod leaves the vanilla research system intact. Thus, it should be compatible with most other research mods. However, it's not compatible with Random Research. 
 
-**Compatible:**
-- https://steamcommunity.com/sharedfiles/filedetails/?id=2010527094]Technology Blueprints &amp; Reverse Engineering - Integrated to change pawn's individual research (unless the pawn really dislikes 
-	
 ![Image](https://i.imgur.com/PwoNOj4.png)
 
 
@@ -139,4 +136,5 @@ Except for research project assignment, this mod leaves the vanilla research sys
 -  If you have the solution for a problem, please post it to the GitHub repository.
 
 
-https://steamcommunity.com/sharedfiles/filedetails/changelog/2904905818]Last updated 2022-12-22
+
+https://steamcommunity.com/sharedfiles/filedetails/changelog/2904905818]Last updated 2022-12-23
