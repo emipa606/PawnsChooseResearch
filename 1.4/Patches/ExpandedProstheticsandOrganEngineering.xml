@@ -10,12 +10,6 @@
           <cyberTech>1</cyberTech>
         </value>
       </li>
-      <li Class="PatchOperationAdd" MayRequire="vat.epoeforked">
-        <xpath>Defs/ResearchProjectDef[defName="BionicWarfare" or defName="AdvancedBionicWarfare" or defName="ExoskeletonSuits"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
-        <value>
-          <meleeTech>1</meleeTech>
-        </value>
-      </li>
     </operations>
   </Operation>
   <Operation Class="PatchOperationSequence" MayRequire="Ykara.elStrages.EPOE">

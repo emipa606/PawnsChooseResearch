@@ -1,5 +1,8 @@
 # Changelog for PawnsChooseResearch
 
+1.4.3 - Fixed some research-patches
+
+
 1.4.2 - Fixed some more auto-rules and added extra null-checks
 
 

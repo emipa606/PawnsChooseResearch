@@ -137,4 +137,5 @@ Except for research project assignment, this mod leaves the vanilla research sys
 
 
 
-https://steamcommunity.com/sharedfiles/filedetails/changelog/2904905818]Last updated 2022-12-23
+
+https://steamcommunity.com/sharedfiles/filedetails/changelog/2904905818]Last updated 2022-12-25
