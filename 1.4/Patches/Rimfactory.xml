@@ -39,7 +39,7 @@
         </value>
       </li>
       <li Class="PatchOperationAdd" MayRequire="spdskatr.projectrimfactory">
-        <xpath>Defs/ResearchProjectDef[defName="PRF_SalResearchIV" or defName="PRF_SalResearchV" or defName="PRF_SalResearchVI"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <xpath>Defs/ResearchProjectDef[defName="PRF_SALResearchIV" or defName="PRF_SALResearchV"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
         <value>
           <artTech>1</artTech>
         </value>

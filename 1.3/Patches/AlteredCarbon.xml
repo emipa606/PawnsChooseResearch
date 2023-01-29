@@ -4,10 +4,22 @@
   <Operation Class="PatchOperationSequence" MayRequire="Hlx.UltratechAlteredCarbon">
     <operations>
       <li Class="PatchOperationAdd" MayRequire="Hlx.UltratechAlteredCarbon">
-        <xpath>Defs/ResearchProjectDef[defName="AC_SleeveProduction"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <xpath>Defs/ResearchProjectDef[defName="UT_Hacking" or defName="UT_CorticalStackMatrix"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <cyberTech>1</cyberTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="Hlx.UltratechAlteredCarbon">
+        <xpath>Defs/ResearchProjectDef[defName="UT_OrganProduction"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
         <value>
           <medTech>1</medTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="Hlx.UltratechAlteredCarbon">
+        <xpath>Defs/ResearchProjectDef[defName="UT_SleeveProduction"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
           <cyberTech>1</cyberTech>
+          <medTech>1</medTech>
         </value>
       </li>
     </operations>

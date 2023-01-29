@@ -1,5 +1,8 @@
 # Changelog for PawnsChooseResearch
 
+1.4.4 - Fixed patches for Project RimFactory Revived and Altered Carbon
+
+
 1.4.3 - Fixed some research-patches
 
 
