@@ -1,5 +1,8 @@
 # Changelog for PawnsChooseResearch
 
+1.4.6 - Fixed some Vanilla Expanded patches, thanks thailyn
+
+
 1.4.5 - Updated the rimfactory patch for 1.3 as well
 
 

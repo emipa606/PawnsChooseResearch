@@ -16,12 +16,6 @@
           <miningTech>1</miningTech>
         </value>
       </li>
-      <li Class="PatchOperationAdd" MayRequire="VanillaExpanded.VWE">
-        <xpath>Defs/ResearchProjectDef[defName="VWE_Tools"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
-        <value>
-          <craftTech>1</craftTech>
-        </value>
-      </li>
     </operations>
   </Operation>
 </Patch>

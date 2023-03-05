@@ -9,12 +9,6 @@
           <constructionTech>1</constructionTech>
         </value>
       </li>
-      <li Class="PatchOperationAdd" MayRequire="VanillaExpanded.VFEPower">
-        <xpath>Defs/ResearchProjectDef[defName="VFE_GasExtraction"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
-        <value>
-          <miningTech>1</miningTech>
-        </value>
-      </li>
     </operations>
   </Operation>
 </Patch>
