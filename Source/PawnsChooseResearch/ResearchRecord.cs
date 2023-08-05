@@ -35,14 +35,7 @@ public class ResearchRecord : GameComponent
 
     public static void SetResearchPlan(Pawn trackedPawn, ResearchProjectDef myProject)
     {
-        if (researchPlan.ContainsKey(trackedPawn))
-        {
-            researchPlan[trackedPawn] = myProject;
-        }
-        else
-        {
-            researchPlan.Add(trackedPawn, myProject);
-        }
+        researchPlan[trackedPawn] = myProject;
     }
 
     public static void UpdateResearchRecord()

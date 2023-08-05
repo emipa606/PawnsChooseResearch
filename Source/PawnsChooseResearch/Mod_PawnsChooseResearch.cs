@@ -54,16 +54,8 @@ internal class Mod_PawnsChooseResearch : Mod
 
             listing_Standard.CheckboxLabeled("PCR_TraitsAffectResearch".Translate(),
                 ref Settings.checkTraits);
-            //if (ModSettings_PawnsChooseResearch.interestsActivated)
-            //{
-            //    listing_Standard.CheckboxLabeled("Interests Affect Research: ",
-            //        ref ModSettings_PawnsChooseResearch.checkPassions);
-            //}
-            //else
-            //{
             listing_Standard.CheckboxLabeled("PCR_PassionsAffectResearch".Translate(),
                 ref Settings.checkPassions);
-            //}
 
             listing_Standard.CheckboxLabeled("PCR_AvoidTooAdvancedResearch".Translate(),
                 ref Settings.preferSimple);

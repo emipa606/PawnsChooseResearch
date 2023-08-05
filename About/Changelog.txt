@@ -1,5 +1,8 @@
 # Changelog for PawnsChooseResearch
 
+1.4.7 - Multiple fixes for research-project selections. Pawns now choose from a larger selection of projects and the prefer simple-research option should now work as expected. The selection should now be more correct as to what the pawn should prefer. Big thanks to thailyn for the insightful comments and code suggestions!
+
+
 1.4.6 - Fixed some Vanilla Expanded patches, thanks thailyn
 
 

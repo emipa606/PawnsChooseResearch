@@ -7,37 +7,36 @@ public class ResearchPreferences
 {
     public static float GetPreferenceScore(Pawn pawn, ResearchProjectDef researchProject)
     {
-        var num = 1f + (researchProject.ProgressPercent / 2f);
+        var preferenceValue = 1f + (researchProject.ProgressPercent / 2f);
         if (researchProject.HasModExtension<ResearchCategory>())
         {
             Startup.LogMessage(
                 $"{pawn.NameFullColored} checking {researchProject.LabelCap}. \n{researchProject.GetModExtension<ResearchCategory>()}");
             if (Mod_PawnsChooseResearch.instance.Settings.checkPassions)
             {
-                //num = ((!ModSettings_PawnsChooseResearch.interestsActivated) ? (num + GetPassionScore(pawn, researchProject)) : (num + Interests_Integration.GetInterestScore(pawn, researchProject)));
-                num += GetPassionScore(pawn, researchProject);
+                preferenceValue += GetPassionScore(pawn, researchProject);
             }
 
             if (Mod_PawnsChooseResearch.instance.Settings.checkTraits)
             {
-                num += GetTraitScore(pawn, researchProject);
+                preferenceValue += GetTraitScore(pawn, researchProject);
             }
 
-            num += GetSpecialTraitScore(pawn, researchProject);
+            preferenceValue += GetSpecialTraitScore(pawn, researchProject);
             if (researchProject.GetModExtension<ResearchCategory>().coreTech > 0)
             {
-                num += pawn.skills.GetSkill(SkillDefOf.Intellectual).Level * 0.05f;
+                preferenceValue += pawn.skills.GetSkill(SkillDefOf.Intellectual).Level * 0.05f;
             }
         }
 
         if (Mod_PawnsChooseResearch.instance.Settings.preferSimple &&
             (int)researchProject.techLevel > (int)Faction.OfPlayer.def.techLevel)
         {
-            num -= (Faction.OfPlayerSilentFail.def.techLevel - researchProject.techLevel) /
-                   (pawn.skills.GetSkill(SkillDefOf.Intellectual).Level + 1f);
+            preferenceValue -= (researchProject.techLevel - Faction.OfPlayerSilentFail.def.techLevel) /
+                               (pawn.skills.GetSkill(SkillDefOf.Intellectual).Level + 1f);
         }
 
-        return num * Rand.Range(0.5f, 1f);
+        return preferenceValue * Rand.Range(0.5f, 1f);
     }
 
     private static float GetPassionScore(Pawn pawn, ResearchProjectDef researchProject)

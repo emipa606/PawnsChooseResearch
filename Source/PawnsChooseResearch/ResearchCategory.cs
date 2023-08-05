@@ -231,12 +231,12 @@ public class ResearchCategory : DefModExtension
             ResearchProjectDef.Named("CE_AdvancedAmmo"),
             ResearchProjectDef.Named("VFES_Artillery_Debug")
         };
-        for (var i = 0; i < list.Count; i++)
+        foreach (var researchProjectDef in list)
         {
             Startup.LogMessage(
-                $"{list[i].label} ranged tech is {list[i].GetModExtension<ResearchCategory>().rangedTech}");
+                $"{researchProjectDef.label} ranged tech is {researchProjectDef.GetModExtension<ResearchCategory>().rangedTech}");
             Startup.LogMessage(
-                $"{list[i].label} never tech is {list[i].GetModExtension<ResearchCategory>().neverTech}");
+                $"{researchProjectDef.label} never tech is {researchProjectDef.GetModExtension<ResearchCategory>().neverTech}");
         }
     }
 }

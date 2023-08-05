@@ -27,9 +27,11 @@ internal class TBnRE_RevEng
         if (Mod_PawnsChooseResearch.instance.Settings.groupResearch)
         {
             ResearchRecord.groupProject = chosenResearchProject;
+            return;
         }
-        else if (!ResearchCapability.IsIncapable(usedBy, chosenResearchProject) &&
-                 !ResearchCapability.IsAbhorrent(usedBy, chosenResearchProject))
+
+        if (!ResearchCapability.IsIncapable(usedBy, chosenResearchProject) &&
+            !ResearchCapability.IsAbhorrent(usedBy, chosenResearchProject))
         {
             ResearchRecord.SetResearchPlan(usedBy, chosenResearchProject);
         }

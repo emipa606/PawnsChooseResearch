@@ -230,107 +230,107 @@ public class Startup
                 return ResearchType.Progress;
             }
 
-            if (thingDef.IsBuildingArtificial)
+            if (!thingDef.IsBuildingArtificial)
             {
-                var buildingProps = thingDef.building;
-                if (buildingProps.isSittable || thingDef.IsTable)
-                {
-                    return ResearchType.Construction;
-                }
+                return ResearchType.None;
+            }
 
-                if (buildingProps.joyKind != null)
-                {
-                    return ResearchType.Social;
-                }
-
-                if (buildingProps.IsTurret)
-                {
-                    return ResearchType.Ranged;
-                }
-
-                if (thingDef.recipes?.Any() != null)
-                {
-                    var normalRecipes = thingDef.recipes.Where(recipeDef => recipeDef.workSkill != null);
-                    var mechRecipesCount = thingDef.recipes.Count(recipeDef => recipeDef.mechanitorOnlyRecipe);
-
-                    if (!normalRecipes.Any())
-                    {
-                        if (mechRecipesCount > 0)
-                        {
-                            return ResearchType.ComplexTech;
-                        }
-                    }
-                    else
-                    {
-                        var skillCount = normalRecipes.Select(recipeDef => recipeDef.workSkill)
-                            .GroupBy(skillDef => skillDef)
-                            .ToDictionary(skillDefs => skillDefs.Key, grouping => grouping.Count())
-                            .MaxBy(pair => pair.Value);
-
-                        if (mechRecipesCount > skillCount.Value)
-                        {
-                            return ResearchType.ComplexTech;
-                        }
-
-                        switch (skillCount.Key.defName)
-                        {
-                            case "Shooting":
-                                return ResearchType.Ranged;
-                            case "Melee":
-                                return ResearchType.Melee;
-                            case "Construction":
-                                return ResearchType.Construction;
-                            case "Mining":
-                                return ResearchType.Mining;
-                            case "Cooking":
-                                return ResearchType.Cooking;
-                            case "Plants":
-                                return ResearchType.Plants;
-                            case "Animals":
-                                return ResearchType.Animals;
-                            case "Crafting":
-                                return ResearchType.Crafting;
-                            case "Artistic":
-                                return ResearchType.Art;
-                            case "Medicine":
-                                return ResearchType.Medical;
-                            case "Social":
-                                return ResearchType.Social;
-                            case "Intellectual":
-                                return ResearchType.ComplexTech;
-                        }
-                    }
-                }
-
-                if (thingDef.EverTransmitsPower)
-                {
-                    var powerCompProps = thingDef.GetCompProperties<CompProperties_Power>();
-                    if (powerCompProps.compClass.IsInstanceOfType(typeof(CompPowerPlant)) ||
-                        powerCompProps.compClass.IsSubclassOf(typeof(CompPowerPlant)) ||
-                        powerCompProps.compClass.IsInstanceOfType(typeof(CompPowerBattery)) ||
-                        powerCompProps.compClass.IsSubclassOf(typeof(CompPowerBattery)))
-                    {
-                        return ResearchType.Progress;
-                    }
-                }
-
-                if (thingDef.defName.StartsWith("Gene"))
-                {
-                    return ResearchType.Medical;
-                }
-
-                if (thingDef.StatBaseDefined(StatDefOf.Beauty) &&
-                    thingDef.GetStatValueAbstract(StatDefOf.Beauty) > 25 ||
-                    thingDef.StatBaseDefined(StatDefOf.BeautyOutdoors) &&
-                    thingDef.GetStatValueAbstract(StatDefOf.BeautyOutdoors) > 25)
-                {
-                    return ResearchType.Art;
-                }
-
+            var buildingProps = thingDef.building;
+            if (buildingProps.isSittable || thingDef.IsTable)
+            {
                 return ResearchType.Construction;
             }
 
-            return ResearchType.None;
+            if (buildingProps.joyKind != null)
+            {
+                return ResearchType.Social;
+            }
+
+            if (buildingProps.IsTurret)
+            {
+                return ResearchType.Ranged;
+            }
+
+            if (thingDef.recipes?.Any() != null)
+            {
+                var normalRecipes = thingDef.recipes.Where(recipeDef => recipeDef.workSkill != null);
+                var mechRecipesCount = thingDef.recipes.Count(recipeDef => recipeDef.mechanitorOnlyRecipe);
+
+                if (!normalRecipes.Any())
+                {
+                    if (mechRecipesCount > 0)
+                    {
+                        return ResearchType.ComplexTech;
+                    }
+                }
+                else
+                {
+                    var skillCount = normalRecipes.Select(recipeDef => recipeDef.workSkill)
+                        .GroupBy(skillDef => skillDef)
+                        .ToDictionary(skillDefs => skillDefs.Key, grouping => grouping.Count())
+                        .MaxBy(pair => pair.Value);
+
+                    if (mechRecipesCount > skillCount.Value)
+                    {
+                        return ResearchType.ComplexTech;
+                    }
+
+                    switch (skillCount.Key.defName)
+                    {
+                        case "Shooting":
+                            return ResearchType.Ranged;
+                        case "Melee":
+                            return ResearchType.Melee;
+                        case "Construction":
+                            return ResearchType.Construction;
+                        case "Mining":
+                            return ResearchType.Mining;
+                        case "Cooking":
+                            return ResearchType.Cooking;
+                        case "Plants":
+                            return ResearchType.Plants;
+                        case "Animals":
+                            return ResearchType.Animals;
+                        case "Crafting":
+                            return ResearchType.Crafting;
+                        case "Artistic":
+                            return ResearchType.Art;
+                        case "Medicine":
+                            return ResearchType.Medical;
+                        case "Social":
+                            return ResearchType.Social;
+                        case "Intellectual":
+                            return ResearchType.ComplexTech;
+                    }
+                }
+            }
+
+            if (thingDef.EverTransmitsPower)
+            {
+                var powerCompProps = thingDef.GetCompProperties<CompProperties_Power>();
+                if (powerCompProps.compClass.IsInstanceOfType(typeof(CompPowerPlant)) ||
+                    powerCompProps.compClass.IsSubclassOf(typeof(CompPowerPlant)) ||
+                    powerCompProps.compClass.IsInstanceOfType(typeof(CompPowerBattery)) ||
+                    powerCompProps.compClass.IsSubclassOf(typeof(CompPowerBattery)))
+                {
+                    return ResearchType.Progress;
+                }
+            }
+
+            if (thingDef.defName.StartsWith("Gene"))
+            {
+                return ResearchType.Medical;
+            }
+
+            if (thingDef.StatBaseDefined(StatDefOf.Beauty) &&
+                thingDef.GetStatValueAbstract(StatDefOf.Beauty) > 25 ||
+                thingDef.StatBaseDefined(StatDefOf.BeautyOutdoors) &&
+                thingDef.GetStatValueAbstract(StatDefOf.BeautyOutdoors) > 25)
+            {
+                return ResearchType.Art;
+            }
+
+            return ResearchType.Construction;
         }
         catch (Exception exception)
         {

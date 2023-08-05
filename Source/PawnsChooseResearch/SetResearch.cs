@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using RimWorld;
@@ -9,35 +10,33 @@ public class SetResearch
 {
     public static void SetRandomResearch(Pawn pawn)
     {
-        var list = new List<ResearchProjectDef>();
-        for (var num = 3; num >= 0; num--)
+        var possibleProjects = DefDatabase<ResearchProjectDef>.AllDefsListForReading.Where(projectDef =>
+            projectDef.CanStartNow && !ResearchCapability.IsIncapable(pawn, projectDef) &&
+            !ResearchCapability.IsAbhorrent(pawn, projectDef));
+
+        if (!possibleProjects.Any())
         {
-            if (DefDatabase<ResearchProjectDef>.AllDefsListForReading.Where(x => x.CanStartNow)
-                    .TryRandomElement(out var result) && !list.Contains(result) && (num < 1 && list.Count == 0 ||
-                    !ResearchCapability.IsIncapable(pawn, result) && !ResearchCapability.IsAbhorrent(pawn, result)))
-            {
-                list.Add(result);
-            }
+            return;
         }
 
-        if (list.Count == 1)
+        if (possibleProjects.Count() == 1)
         {
-            ResearchRecord.SetResearchPlan(pawn, list[0]);
+            ResearchRecord.SetResearchPlan(pawn, possibleProjects.First());
             return;
         }
 
         var researchProjectDef = new ResearchProjectDef();
-        var num2 = -100f;
-        foreach (var item in list)
+        var highestScore = -100f;
+        foreach (var researchProject in possibleProjects.InRandomOrder().Take(Math.Min(possibleProjects.Count(), 10)))
         {
-            var num3 = ResearchPreferences.GetPreferenceScore(pawn, item);
-            if (!(num3 > num2) && researchProjectDef != null)
+            var currentScore = ResearchPreferences.GetPreferenceScore(pawn, researchProject);
+            if (currentScore <= highestScore && researchProjectDef != null)
             {
                 continue;
             }
 
-            researchProjectDef = item;
-            num2 = num3;
+            researchProjectDef = researchProject;
+            highestScore = currentScore;
         }
 
         Startup.LogMessage($"{pawn.NameFullColored} is choosing {researchProjectDef.label}");
@@ -46,8 +45,7 @@ public class SetResearch
 
     public static void SetRandomGroupResearch()
     {
-        var list = new List<ResearchProjectDef>();
-        var list2 = new List<Pawn>();
+        var pawns = new List<Pawn>();
         foreach (var map in Find.Maps)
         {
             if (!map.IsPlayerHome)
@@ -55,53 +53,62 @@ public class SetResearch
                 continue;
             }
 
-            foreach (var item in map.mapPawns.FreeColonistsSpawned)
+            foreach (var pawn in map.mapPawns.FreeColonistsSpawned)
             {
-                if (item.workSettings.WorkIsActive(WorkTypeDefOf.Research))
+                if (pawn.workSettings.WorkIsActive(WorkTypeDefOf.Research))
                 {
-                    list2.Add(item);
+                    pawns.Add(pawn);
                 }
             }
         }
 
-        if (list2.Count == 0 && DefDatabase<ResearchProjectDef>.AllDefsListForReading.Where(x => x.CanStartNow)
-                .TryRandomElement(out var result))
+        var possibleProjects =
+            DefDatabase<ResearchProjectDef>.AllDefsListForReading.Where(projectDef => projectDef.CanStartNow);
+
+        if (!possibleProjects.Any())
+        {
+            return;
+        }
+
+        if (possibleProjects.Count() == 1)
+        {
+            Find.ResearchManager.currentProj = possibleProjects.First();
+            return;
+        }
+
+        if (pawns.Count == 0 && possibleProjects.TryRandomElement(out var result))
         {
             Find.ResearchManager.currentProj = result;
             return;
         }
 
-        var num = 1 + list2.Count;
-        for (var i = 0; i < num; i++)
-        {
-            if (DefDatabase<ResearchProjectDef>.AllDefsListForReading.Where(x => x.CanStartNow)
-                    .TryRandomElement(out var result2) && !list.Contains(result2))
-            {
-                list.Add(result2);
-            }
-        }
+
+        var pawnsCount = 1 + pawns.Count;
+
+        var researchProjectDefs =
+            possibleProjects.InRandomOrder().Take(Math.Min(possibleProjects.Count(), 20 + pawnsCount));
 
         var researchProjectDef = new ResearchProjectDef();
-        var num2 = -100f;
-        var num3 = 0f;
-        foreach (var item2 in list)
+        var highestScore = -100f;
+        foreach (var projectDef in researchProjectDefs)
         {
-            foreach (var item3 in list2)
+            var currentScore = 0f;
+            foreach (var pawn in pawns)
             {
-                num3 = !ResearchCapability.IsAbhorrent(item3, item2)
-                    ? !ResearchCapability.IsIncapable(item3, item2)
-                        ? num3 + ResearchPreferences.GetPreferenceScore(item3, item2)
-                        : num3 - 1f
-                    : num3 - 3f;
+                currentScore = !ResearchCapability.IsAbhorrent(pawn, projectDef)
+                    ? !ResearchCapability.IsIncapable(pawn, projectDef)
+                        ? currentScore + ResearchPreferences.GetPreferenceScore(pawn, projectDef)
+                        : currentScore - 1f
+                    : currentScore - 3f;
             }
 
-            if (!(num3 > num2) && researchProjectDef != null)
+            if (currentScore <= highestScore && researchProjectDef != null)
             {
                 continue;
             }
 
-            researchProjectDef = item2;
-            num2 = num3;
+            researchProjectDef = projectDef;
+            highestScore = currentScore;
         }
 
         Find.ResearchManager.currentProj = researchProjectDef;
