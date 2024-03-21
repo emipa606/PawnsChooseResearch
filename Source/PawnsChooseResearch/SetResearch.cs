@@ -72,13 +72,13 @@ public class SetResearch
 
         if (possibleProjects.Count() == 1)
         {
-            Find.ResearchManager.currentProj = possibleProjects.First();
+            Startup.currentProjField.SetValue(Find.ResearchManager, possibleProjects.First());
             return;
         }
 
         if (pawns.Count == 0 && possibleProjects.TryRandomElement(out var result))
         {
-            Find.ResearchManager.currentProj = result;
+            Startup.currentProjField.SetValue(Find.ResearchManager, result);
             return;
         }
 
@@ -111,7 +111,7 @@ public class SetResearch
             highestScore = currentScore;
         }
 
-        Find.ResearchManager.currentProj = researchProjectDef;
+        Startup.currentProjField.SetValue(Find.ResearchManager, researchProjectDef);
         ResearchRecord.groupProject = researchProjectDef;
     }
 }

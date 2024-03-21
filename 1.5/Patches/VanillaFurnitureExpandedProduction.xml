@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- Vanilla Furniture Expanded - Production (by Veralin) -->
+  <Operation Class="PatchOperationSequence" MayRequire="VanillaExpanded.VFEProduction">
+    <operations>
+      <li Class="PatchOperationAdd" MayRequire="VanillaExpanded.VFEProduction">
+        <xpath>Defs/ResearchProjectDef[defName="VFE_Manufacturing"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <craftTech>1</craftTech>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+</Patch>

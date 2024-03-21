@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationSequence" MayRequire="fluffy.fluffybreakdowns">
+    <operations>
+      <li Class="PatchOperationAdd" MayRequire="fluffy.fluffybreakdowns">
+        <xpath>Defs/ResearchProjectDef[defName="FluffyBreakdowns_ComponentLifetimeOne" or defName="FluffyBreakdowns_ComponentLifetimeTwo"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <craftTech>1</craftTech>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+</Patch>

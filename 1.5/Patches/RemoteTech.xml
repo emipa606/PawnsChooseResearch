@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationSequence" MayRequire="UnlimitedHugs.RemoteTech">
+    <operations>
+      <li Class="PatchOperationAdd" MayRequire="UnlimitedHugs.RemoteTech">
+        <xpath>Defs/ResearchProjectDef[defName="rxMakeshiftExplosives"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <coreTech>1</coreTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="UnlimitedHugs.RemoteTech">
+        <xpath>Defs/ResearchProjectDef[defName="rxImprovedDetWire" or defName="rxRemoteDetonator" or defName="rxProximitySensor"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <craftTech>1</craftTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="UnlimitedHugs.RemoteTech">
+        <xpath>Defs/ResearchProjectDef[defName="rxRadioMast" or defName="rxGasVent" or defName="rxPortablePower"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <constructionTech>1</constructionTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="UnlimitedHugs.RemoteTech">
+        <xpath>Defs/ResearchProjectDef[defName="rxRoofBreaking"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <miningTech>1</miningTech>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+</Patch>

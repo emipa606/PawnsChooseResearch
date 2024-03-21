@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- Vanilla Furniture Expanded - Farming (by Veralin) -->
+  <Operation Class="PatchOperationSequence" MayRequire="VanillaExpanded.VFEFarming">
+    <operations>
+      <li Class="PatchOperationAdd" MayRequire="VanillaExpanded.VFEFarming">
+        <xpath>Defs/ResearchProjectDef[defName="VFE_Res_AdvancedHydroponics" or defName="VFE_Res_Sprinkler" or defName="VFE_Res_FarmingTechniques"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <plantTech>1</plantTech>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+</Patch>

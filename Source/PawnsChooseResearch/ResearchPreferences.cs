@@ -136,7 +136,7 @@ public class ResearchPreferences
             }
 
             if (def == TraitDefOf.Industriousness && trait.Degree > 0 ||
-                def == TraitDefOf.Nerves && trait.Degree > 0 ||
+                def == Startup.Nerves && trait.Degree > 0 ||
                 def.GetModExtension<ResearchCategory>().complexTech < 0)
             {
                 num -= researchProject.baseCost / (int)researchProject.techLevel / 1000f;
@@ -149,12 +149,12 @@ public class ResearchPreferences
 
             if (researchProject.GetModExtension<ResearchCategory>().rangedTech > 0)
             {
-                if (def == TraitDefOf.NaturalMood && trait.Degree < 0 ||
+                if (def == Startup.NaturalMood && trait.Degree < 0 ||
                     def.GetModExtension<ResearchCategory>().rangedTech > 0)
                 {
                     num += 1f;
                 }
-                else if (trait.def == TraitDefOf.NaturalMood && trait.Degree > 0 ||
+                else if (trait.def == Startup.NaturalMood && trait.Degree > 0 ||
                          trait.def.GetModExtension<ResearchCategory>().rangedTech < 0)
                 {
                     num -= 1f;
@@ -163,12 +163,12 @@ public class ResearchPreferences
 
             if (researchProject.GetModExtension<ResearchCategory>().meleeTech > 0)
             {
-                if (def == TraitDefOf.NaturalMood && trait.Degree < 0 ||
+                if (def == Startup.NaturalMood && trait.Degree < 0 ||
                     def.GetModExtension<ResearchCategory>().meleeTech > 0)
                 {
                     num += 1f;
                 }
-                else if (trait.def == TraitDefOf.NaturalMood && trait.Degree > 0 ||
+                else if (trait.def == Startup.NaturalMood && trait.Degree > 0 ||
                          trait.def.GetModExtension<ResearchCategory>().meleeTech < 0)
                 {
                     num -= 1f;
@@ -263,7 +263,7 @@ public class ResearchPreferences
 
             if (researchProject.GetModExtension<ResearchCategory>().medTech > 0)
             {
-                if (def == TraitDefOf.NaturalMood && trait.Degree < 0 ||
+                if (def == Startup.NaturalMood && trait.Degree < 0 ||
                     def == TraitDef.Named("Immunity") && trait.Degree < 0 ||
                     def.GetModExtension<ResearchCategory>().medTech > 0)
                 {

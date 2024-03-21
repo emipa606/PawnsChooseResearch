@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationSequence">
+    <operations>
+      <li Class="PatchOperationAddModExtension">
+        <xpath>Defs/ResearchProjectDef</xpath>
+        <value>
+          <li Class="PawnsChooseResearch.ResearchCategory">
+          </li>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/ResearchProjectDef[defName="Smithing" or defName="Machining" or defName="Electricity" or defName="MicroelectronicsBasics" or defName="MultiAnalyzer" or defName="ShipBasics" or defName="ElectricCooking"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <coreTech>1</coreTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/ResearchProjectDef[defName="RecurveBow" or defName="Greatbow" or defName="Gunsmithing" or defName="IEDs" or defName="FlakArmor" or defName="BlowbackOperation"or defName="Mortars" or defName="GasOperation" or defName="GunTurrets" or defName="PrecisionRifling" or defName="HeavyTurrets" or defName="MultibarrelWeapons" or defName="ChargedShot" or defName="SniperTurret"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <rangedTech>1</rangedTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/ResearchProjectDef[defName="Smithing" or defName="LongBlades" or defName="PlateArmor" or defName="SmokepopBelt" or defName="FlakArmor" or defName="ShieldBelt" or defName="ReconArmor" or defName="PoweredArmor"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <meleeTech>1</meleeTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/ResearchProjectDef[defName="Stonecutting" or defName="PassiveCooler" or defName="SolarPanels" or defName="Batteries" or defName="Autodoors" or defName="AirConditioning" or defName="BiofuelRefining" or defName="WatermillGenerator" or defName="TransportPod" or defName="ShipReactor"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <constructionTech>1</constructionTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/ResearchProjectDef[defName="GeothermalPower" or defName="DeepDrilling" or defName="GroundPenetratingScanner" or defName="LongRangeMineralScanner"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <miningTech>1</miningTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/ResearchProjectDef[defName="Brewing" or defName="PsychoidBrewing" or defName="Pemmican" or defName="NutrientPaste" or defName="PackagedSurvivalMeal" or defName="ElectricCooking"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <cookingTech>1</cookingTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/ResearchProjectDef[defName="TreeSowing" or defName="Brewing" or defName="Cocoa" or defName="Devilstrand" or defName="Hydroponics" or defName="MoisturePump"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <plantTech>1</plantTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/ResearchProjectDef[defName="ComplexFurniture" or defName="ComplexClothing" or defName="CarpetMaking" or defName="Smithing" or defName="Machining" or defName="Firefoam" or defName="GunTurrets" or defName="HeavyTurrets" or defName="SniperTurret" or defName="Fabrication" or defName="AdvancedFabrication" or defName="ShipEngine"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <craftTech>1</craftTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/ResearchProjectDef[defName="Stonecutting" or defName="TubeTelevision" or defName="FlatscreenTelevision"or defName="CarpetMaking" or defName="ColoredLights" or defName="TubeTelevision" or defName="FlatscreenTelevsion"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <artTech>1</artTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/ResearchProjectDef[defName="ShipComputerCore" or defName="ShipSensorCluster"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <socialTech>1</socialTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/ResearchProjectDef[defName="DrugProduction" or defName="PsychiteRefining" or defName="WakeUpProduction" or defName="GoJuiceProduction" or defName="PenoxycylineProduction" or defName="SterileMaterials" or defName="Prosthetics" or defName="HospitalBed" or defName="MedicineProduction" or defName="VitalsMonitor" or defName="Cryptosleep" or defName="Bionics" or defName="ShipCryptosleep"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <medTech>1</medTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/ResearchProjectDef[defName="PsychoidBrewing" or defName="DrugProduction" or defName="PsychiteRefining" or defName="WakeUpProduction" or defName="GoJuiceProduction"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <drugTech>1</drugTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/ResearchProjectDef[defName="Prosthetics" or defName="Bionics"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <cyberTech>1</cyberTech>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+</Patch>

@@ -30,14 +30,14 @@ public class Patch_Research
             }
         }
 
-        Find.ResearchManager.currentProj = ResearchRecord.CurrentProject(researcher);
+        Startup.currentProjField.SetValue(Find.ResearchManager, ResearchRecord.CurrentProject(researcher));
     }
 
     [HarmonyPatch(typeof(Alert_NeedResearchProject), "GetReport")]
     [HarmonyPrefix]
     public static void Prefix_SetResearch()
     {
-        if (Find.ResearchManager.currentProj != null)
+        if (Startup.currentProjField.GetValue(Find.ResearchManager) != null)
         {
             return;
         }
@@ -49,7 +49,7 @@ public class Patch_Research
         else if (DefDatabase<ResearchProjectDef>.AllDefsListForReading.Where(x => x.CanStartNow)
                  .TryRandomElement(out var result))
         {
-            Find.ResearchManager.currentProj = result;
+            Startup.currentProjField.SetValue(Find.ResearchManager, result);
         }
     }
 }

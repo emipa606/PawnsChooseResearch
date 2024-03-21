@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationSequence" MayRequire="Haplo.Miscellaneous.TurretBaseAndObjects">
+    <operations>
+      <li Class="PatchOperationAdd" MayRequire="Haplo.Miscellaneous.TurretBaseAndObjects">
+        <xpath>Defs/ResearchProjectDef[defName="ResearchNanoReplication"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <craftTech>1</craftTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="Haplo.Miscellaneous.TurretBaseAndObjects">
+        <xpath>Defs/ResearchProjectDef[defName="ResearchTurretWeaponBaseAlternateCooldown" or defName="ResearchTurretWeaponBaseHighTechTargeting"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <rangedTech>1</rangedTech>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+</Patch>

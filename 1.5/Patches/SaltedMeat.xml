@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- Salted Meat (by Veralin) -->
+  <Operation Class="PatchOperationSequence" MayRequire="Argon.SaltedMeat">
+    <operations>
+      <li Class="PatchOperationAdd" MayRequire="Argon.SaltedMeat">
+        <xpath>Defs/ResearchProjectDef[defName="SM_Salt_Conserving"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <cookingTech>1</cookingTech>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+</Patch>

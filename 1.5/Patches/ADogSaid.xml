@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- A dog said prosthetics -->
+  <Operation Class="PatchOperationSequence" MayRequire="spoonshortage.ADogSaidAnimalProsthetics">
+    <operations>
+      <li Class="PatchOperationAdd" MayRequire="spoonshortage.ADogSaidAnimalProsthetics">
+        <xpath>Defs/ResearchProjectDef[defName="SimpleAnimalProsthetics" or defName="AnimalBionics"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <cyberTech>1</cyberTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="spoonshortage.ADogSaidAnimalProsthetics">
+        <xpath>Defs/ResearchProjectDef[defName="SimpleAnimalProsthetics" or defName="AnimalBionics" or defName="AnimalHeal"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <animalTech>1</animalTech>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+</Patch>

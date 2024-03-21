@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- Vanilla Helixien Gas Expanded -->
+  <Operation Class="PatchOperationConditional">
+    <xpath>/Defs/ResearchProjectDef[defName="VHGE_GasExtraction"]</xpath>
+    <success>Always</success>
+    <match Class="PatchOperationAdd" MayRequire="VanillaExpanded.VFEPower">
+      <xpath>Defs/ResearchProjectDef[defName="VHGE_GasExtraction"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+      <value>
+        <miningTech>1</miningTech>
+      </value>
+    </match>
+  </Operation>
+</Patch>

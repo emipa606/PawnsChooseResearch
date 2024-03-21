@@ -13,8 +13,13 @@ public class Startup
 {
     private static int changedProjects;
 
+    public static readonly FieldInfo currentProjField;
+    public static readonly TraitDef Nerves = TraitDef.Named("Nerves");
+    public static readonly TraitDef NaturalMood = TraitDef.Named("NaturalMood");
+
     static Startup()
     {
+        currentProjField = AccessTools.Field(typeof(ResearchManager), "currentProj");
         var harmony = new Harmony("rimworld.pawnschooseresearch");
         harmony.PatchAll(Assembly.GetExecutingAssembly());
         HarmonyUnpatching();
@@ -52,7 +57,7 @@ public class Startup
             {
                 if (projectDef.modExtensions == null)
                 {
-                    projectDef.modExtensions = new List<DefModExtension>();
+                    projectDef.modExtensions = [];
                 }
 
                 projectDef.modExtensions?.Add(new ResearchCategory());
@@ -83,13 +88,10 @@ public class Startup
                     continue;
                 }
 
-                if (researchValueDictionary.ContainsKey(thingEnum))
+                if (!researchValueDictionary.TryAdd(thingEnum, 1))
                 {
                     researchValueDictionary[thingEnum]++;
-                    continue;
                 }
-
-                researchValueDictionary[thingEnum] = 1;
             }
 
             if (!researchValueDictionary.Any())

@@ -17,7 +17,7 @@ public class Patch_ResearchInspect
             return;
         }
 
-        var researchProjectDef = Find.ResearchManager.currentProj;
+        var researchProjectDef = (ResearchProjectDef)Startup.currentProjField.GetValue(Find.ResearchManager);
         if (!Mod_PawnsChooseResearch.instance.Settings.restoreControl)
         {
             researchProjectDef = ResearchRecord.CurrentProject(___pawn);

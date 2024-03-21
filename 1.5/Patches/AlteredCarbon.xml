@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- Altered Carbon -->
+  <Operation Class="PatchOperationSequence" MayRequire="Hlx.UltratechAlteredCarbon">
+    <operations>
+      <li Class="PatchOperationAdd" MayRequire="Hlx.UltratechAlteredCarbon">
+        <xpath>Defs/ResearchProjectDef[defName="AC_CorticalCrafting" or defName="AC_CorticalStorage"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <cyberTech>1</cyberTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="Hlx.UltratechAlteredCarbon">
+        <xpath>Defs/ResearchProjectDef[defName="AC_Sleeving"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <cyberTech>1</cyberTech>
+          <medTech>1</medTech>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+</Patch>

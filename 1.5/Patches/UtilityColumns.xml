@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationSequence" MayRequire="nephlite.orbitaltradecolumn">
+    <operations>
+      <li Class="PatchOperationAdd" MayRequire="nephlite.orbitaltradecolumn">
+        <xpath>Defs/ResearchProjectDef[defName="OrbitalTradeColumnRes" or defName="DetColumnRes"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <constructionTech>1</constructionTech>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+</Patch>

@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationSequence" MayRequire="Cozarkian.VarietyMatters.Meals">
+    <success>Always</success>
+    <operations>
+      <li Class="PatchOperationAdd" MayRequire="Cozarkian.VarietyMatters.Meals">
+        <xpath>Defs/ResearchProjectDef[defName="ElectricalCooking" or defName="CulturalCooking"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <cookingTech>1</cookingTech>
+        </value>
+      </li>
+      <li Class="PatchOperationTest" MayRequire="Cozarkian.VarietyMatters.Meals">
+        <xpath>Defs/ResearchProjectDef[defName="AdvancedOlericulture"]</xpath>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="Cozarkian.VarietyMatters.Meals">
+        <xpath>Defs/ResearchProjectDef[defName="AdvancedOlericulture"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <cookingTech>1</cookingTech>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+</Patch>

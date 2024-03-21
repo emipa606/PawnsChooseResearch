@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationSequence" MayRequire="cucumpear.LEDlights">
+    <operations>
+      <li Class="PatchOperationAdd" MayRequire="cucumpear.LEDlights">
+        <xpath>Defs/ResearchProjectDef[defName="CCP_LEDLights" or defName="CCP_LEDGrowLights" or defName="CCP_LEDMedLights"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <constructionTech>1</constructionTech>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+</Patch>

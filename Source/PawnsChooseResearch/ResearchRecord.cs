@@ -5,9 +5,9 @@ namespace PawnsChooseResearch;
 
 public class ResearchRecord : GameComponent
 {
-    public static List<ResearchProjectDef> currentProjects = new List<ResearchProjectDef>();
+    public static List<ResearchProjectDef> currentProjects = [];
 
-    private static List<Pawn> trackedPawns = new List<Pawn>();
+    private static List<Pawn> trackedPawns = [];
 
     private static Dictionary<Pawn, ResearchProjectDef> researchPlan;
 

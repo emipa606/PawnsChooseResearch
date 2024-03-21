@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationSequence" MayRequire="Mlie.RoadsOfTheRim">
+    <operations>
+      <li Class="PatchOperationAdd" MayRequire="Mlie.RoadsOfTheRim">
+        <xpath>Defs/ResearchProjectDef[defName="ResearchProject_RotRAsphaltRoad" or defName="ResearchProject_RotRGlitterRoad" or defName="ResearchProject_RotRISR2G" or defName="ResearchProject_RotRAISR2G"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <constructionTech>1</constructionTech>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+</Patch>

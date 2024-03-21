@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!--Replimat-->
+  <Operation Class="PatchOperationSequence" MayRequire="sumghai.Replimat">
+    <operations>
+      <li Class="PatchOperationAdd" MayRequire="sumghai.Replimat">
+        <xpath>Defs/ResearchProjectDef[defName="MolecularNutrientResequencing"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <cookingTech>1</cookingTech>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+</Patch>

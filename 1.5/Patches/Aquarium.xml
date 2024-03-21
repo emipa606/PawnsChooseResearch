@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationSequence" MayRequire="Mlie.Aquarium">
+    <operations>
+      <li Class="PatchOperationAdd" MayRequire="Mlie.Aquarium">
+        <xpath>Defs/ResearchProjectDef[defName="AQFishPets" or defName="AQFishTanks"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <animalTech>1</animalTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="Mlie.Aquarium">
+        <xpath>Defs/ResearchProjectDef[defName="AQGelatin"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <cookingTech>1</cookingTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="Mlie.Aquarium">
+        <xpath>Defs/ResearchProjectDef[defName="AQSpirulina"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <plantTech>1</plantTech>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+</Patch>
