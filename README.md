@@ -1,4 +1,4 @@
-# PawnsChooseResearch
+# [PawnsChooseResearch (Continued)](https://steamcommunity.com/sharedfiles/filedetails/?id=2904905818)
 
 ![Image](https://i.imgur.com/buuPQel.png)
 
@@ -8,14 +8,13 @@ https://steamcommunity.com/sharedfiles/filedetails/?id=2230044022
 - Added logic for projects that do not have specific patches, so research-projects from other mods should now mostly have an appropriate category set.
 
 ![Image](https://i.imgur.com/pufA0kM.png)
-
 	
 ![Image](https://i.imgur.com/Z4GOv8H.png)
 
 # What it Does
 
 
-Eliminates the need to micromanage research by having pawns select it for you. Each pawn now selects and tracks their own research project based on their skill passions, disabled skills, and traits. You can see a pawn's current research while they are researching or anytime in their stats page. Can't remember which pawn researched what? Now you can track the entire research timeline with https://steamcommunity.com/sharedfiles/filedetails/?id=2688698217]Research History.
+Eliminates the need to micromanage research by having pawns select it for you. Each pawn now selects and tracks their own research project based on their skill passions, disabled skills, and traits. You can see a pawn's current research while they are researching or anytime in their stats page. Can't remember which pawn researched what? Now you can track the entire research timeline with [Research History](https://steamcommunity.com/sharedfiles/filedetails/?id=2688698217).
 
 # Recent Updates
 
@@ -34,7 +33,7 @@ Research projects are assigned a category (some obvious, some make sense in my h
 
 "Core" techs that serve as a prerequisite for others (e.g. smithing, machining, electricity, microelectronics, multianalyzer, and starflight basics) get a small boost to increase the chance they will be researched, based on the skill level of the researcher.
 
-If you need to research an essential tech, there is a setting to temporarily disable this mod without having to reinstall and reload. If you want an item to force pawns to research certain technologies, check out https://steamcommunity.com/sharedfiles/filedetails/?id=2231797010] Pawns Choose Vanilla Books! or https://steamcommunity.com/sharedfiles/filedetails/?id=2319010232]Pawns Choose Tech Sales. 
+If you need to research an essential tech, there is a setting to temporarily disable this mod without having to reinstall and reload. If you want an item to force pawns to research certain technologies, check out [ Pawns Choose Vanilla Books!](https://steamcommunity.com/sharedfiles/filedetails/?id=2231797010) or [Pawns Choose Tech Sales](https://steamcommunity.com/sharedfiles/filedetails/?id=2319010232). 
 
 Pawns will not pick a new research project until their current one is completed. You can see what they are researching by selecting the pawn while they are researching, or by checking their stat page at anytime. If you have multiple pawns researching at the same time, progress on each research will increase. Progress is still tracked using the vanilla system, so if multiple pawns are working on the same research, they will contribute together.
 
@@ -48,7 +47,7 @@ Pawns Coordinate Research - select a random group project based on group prefere
 
 Must Have Skill Capacity - If enabled, pawns won't research projects for skill categories they don't have (i.e. shooting incapable pawns won't research ranged weapon techs).
 
-Passions/Interest Affect Research - If enabled, pawns consider their skill passions when selecting research. V1.3 has integrated compatibility with https://steamcommunity.com/sharedfiles/filedetails/?id=2089927321]Interests Framework (continued)
+Passions/Interest Affect Research - If enabled, pawns consider their skill passions when selecting research. V1.3 has integrated compatibility with [Interests Framework (continued)](https://steamcommunity.com/sharedfiles/filedetails/?id=2089927321)
 
 Traits Affect Research -If enabled, pawns consider traits when selecting research. Certain special trait-based preferences (e.g. chemical fascination pawns like drugs) are always enabled.
 
@@ -130,13 +129,12 @@ Except for research project assignment, this mod leaves the vanilla research sys
 
 -  See if the the error persists if you just have this mod and its requirements active.
 -  If not, try adding your other mods until it happens again.
--  Post your error-log using https://steamcommunity.com/workshop/filedetails/?id=818773962]HugsLib or the standalone https://steamcommunity.com/sharedfiles/filedetails/?id=2873415404]Uploader and command Ctrl+F12
+-  Post your error-log using [HugsLib](https://steamcommunity.com/workshop/filedetails/?id=818773962) or the standalone [Uploader](https://steamcommunity.com/sharedfiles/filedetails/?id=2873415404) and command Ctrl+F12
 -  For best support, please use the Discord-channel for error-reporting.
 -  Do not report errors by making a discussion-thread, I get no notification of that.
 -  If you have the solution for a problem, please post it to the GitHub repository.
--  Use https://github.com/RimSort/RimSort/releases/latest]RimSort to sort your mods
+-  Use [RimSort](https://github.com/RimSort/RimSort/releases/latest) to sort your mods
 
 
 
-https://steamcommunity.com/sharedfiles/filedetails/changelog/2904905818]![Image](https://img.shields.io/github/v/release/emipa606/PawnsChooseResearch?label=latest%20version&style=plastic&color=9f1111&labelColor=black)
-
+[![Image](https://img.shields.io/github/v/release/emipa606/PawnsChooseResearch?label=latest%20version&style=plastic&color=9f1111&labelColor=black)](https://steamcommunity.com/sharedfiles/filedetails/changelog/2904905818)

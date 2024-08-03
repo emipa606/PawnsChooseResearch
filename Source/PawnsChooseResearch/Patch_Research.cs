@@ -46,7 +46,7 @@ public class Patch_Research
         {
             SetResearch.SetRandomGroupResearch();
         }
-        else if (DefDatabase<ResearchProjectDef>.AllDefsListForReading.Where(x => x.CanStartNow)
+        else if (Startup.PossibleResearchProjectDefs.Where(x => x.CanStartNow)
                  .TryRandomElement(out var result))
         {
             Startup.currentProjField.SetValue(Find.ResearchManager, result);

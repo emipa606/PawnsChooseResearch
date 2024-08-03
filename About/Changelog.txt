@@ -1,5 +1,8 @@
 # Changelog for PawnsChooseResearch
 
+1.5.1 - Anomaly research should no longer be controlled by the mod
+
+
 1.5.0 - Mod updated for 1.5 and passed autotests
 
 

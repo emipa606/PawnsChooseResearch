@@ -10,7 +10,7 @@ public class SetResearch
 {
     public static void SetRandomResearch(Pawn pawn)
     {
-        var possibleProjects = DefDatabase<ResearchProjectDef>.AllDefsListForReading.Where(projectDef =>
+        var possibleProjects = Startup.PossibleResearchProjectDefs.Where(projectDef =>
             projectDef.CanStartNow && !ResearchCapability.IsIncapable(pawn, projectDef) &&
             !ResearchCapability.IsAbhorrent(pawn, projectDef));
 
@@ -62,8 +62,7 @@ public class SetResearch
             }
         }
 
-        var possibleProjects =
-            DefDatabase<ResearchProjectDef>.AllDefsListForReading.Where(projectDef => projectDef.CanStartNow);
+        var possibleProjects = Startup.PossibleResearchProjectDefs.Where(projectDef => projectDef.CanStartNow);
 
         if (!possibleProjects.Any())
         {

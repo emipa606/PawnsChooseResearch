@@ -12,6 +12,7 @@ namespace PawnsChooseResearch;
 public class Startup
 {
     private static int changedProjects;
+    public static readonly List<ResearchProjectDef> PossibleResearchProjectDefs;
 
     public static readonly FieldInfo currentProjField;
     public static readonly TraitDef Nerves = TraitDef.Named("Nerves");
@@ -19,13 +20,17 @@ public class Startup
 
     static Startup()
     {
+        PossibleResearchProjectDefs = ModsConfig.AnomalyActive
+            ? DefDatabase<ResearchProjectDef>.AllDefsListForReading
+                .Where(def => def.knowledgeCategory == null).ToList()
+            : DefDatabase<ResearchProjectDef>.AllDefsListForReading;
         currentProjField = AccessTools.Field(typeof(ResearchManager), "currentProj");
         var harmony = new Harmony("rimworld.pawnschooseresearch");
         harmony.PatchAll(Assembly.GetExecutingAssembly());
         HarmonyUnpatching();
         DefDatabase<StatDef>.Add(MakeProjectStatDef());
 
-        foreach (var projectDef in DefDatabase<ResearchProjectDef>.AllDefs)
+        foreach (var projectDef in PossibleResearchProjectDefs)
         {
             if (projectDef == null)
             {

@@ -134,7 +134,7 @@ public class ResearchCategory : DefModExtension
     public static void CategoryCheck()
     {
         Startup.LogMessage("Running Test");
-        foreach (var item in DefDatabase<ResearchProjectDef>.AllDefsListForReading)
+        foreach (var item in Startup.PossibleResearchProjectDefs)
         {
             if (!item.HasModExtension<ResearchCategory>())
             {
