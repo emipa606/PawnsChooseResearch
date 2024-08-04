@@ -21,7 +21,7 @@
           <li>Vanilla Weapons Expanded</li>
         </mods>
         <nomatch Class="PatchOperationAdd" MayRequire="VanillaExpanded.VFESecurity">
-          <xpath>Defs/ResearchProjectDef[defName="VFES_TrenchWarfare"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+          <xpath>Defs/ResearchProjectDef[defName="VWE_TrenchWarfare"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
           <value>
             <rangedTech>1</rangedTech>
             <constructionTech>1</constructionTech>

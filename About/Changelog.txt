@@ -1,5 +1,8 @@
 # Changelog for PawnsChooseResearch
 
+1.5.2 - Fixed Vanilla Weapons Expanded patch
+
+
 1.5.1 - Anomaly research should no longer be controlled by the mod
 
 
