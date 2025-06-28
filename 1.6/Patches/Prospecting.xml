@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationSequence" MayRequire="Mlie.Prospecting">
+    <operations>
+      <li Class="PatchOperationAdd" MayRequire="Mlie.Prospecting">
+        <xpath>Defs/ResearchProjectDef[defName="PrsManualDrilling"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <miningTech>1</miningTech>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+</Patch>

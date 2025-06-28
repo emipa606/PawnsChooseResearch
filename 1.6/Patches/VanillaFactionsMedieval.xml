@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- Vanilla Factions - Medieval -->
+  <Operation Class="PatchOperationSequence" MayRequire="OskarPotocki.VanillaFactionsExpanded.MedievalModule">
+    <operations>
+      <li Class="PatchOperationAdd" MayRequire="OskarPotocki.VanillaFactionsExpanded.MedievalModule">
+        <xpath>Defs/ResearchProjectDef[defName="VFEM_HeavyCrossbow"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <rangedTech>1</rangedTech>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+</Patch>

@@ -27,7 +27,7 @@ public class ModSettings_PawnsChooseResearch : ModSettings
     {
         interestsActivated = false;
         vanillaTraitsActivated =
-            ModLister.GetActiveModWithIdentifier("VanillaExpanded.VanillaTraitsExpanded") != null;
+            ModLister.GetActiveModWithIdentifier("VanillaExpanded.VanillaTraitsExpanded", true) != null;
     }
 
     public override void ExposeData()

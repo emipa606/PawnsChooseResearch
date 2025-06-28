@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationSequence" MayRequire="OskarPotocki.VFE.Mechanoid">
+    <operations>
+      <li Class="PatchOperationAdd" MayRequire="OskarPotocki.VFE.Mechanoid">
+        <xpath>Defs/ResearchProjectDef[defName="VFE_FactoryBasics"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <coreTech>1</coreTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="OskarPotocki.VFE.Mechanoid">
+        <xpath>Defs/ResearchProjectDef[defName="VFE_FactoryBasics" or defName="VFE_ElectronicsFabricationFactory" or defName="VFE_MasonryandMetallicsFactory" or defName="VFE_MunitionsandArmamentsFactory" or defName="VFE_WearablesandTextilesFactory" or defName="VFE_ProvisionsPackagingFactory" or defName="VFE_MedicinalCompoundingFactory" or defName="VFE_BasicDroneAssembly" or defName="VFE_AutomatedDefensiveMeasures"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <constructionTech>1</constructionTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="OskarPotocki.VFE.Mechanoid">
+        <xpath>Defs/ResearchProjectDef[defName="VFE_ElectronicsFabricationFactory"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <miningTech>1</miningTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="OskarPotocki.VFE.Mechanoid">
+        <xpath>Defs/ResearchProjectDef[defName="VFE_MunitionsandArmamentsFactory" or defName="VFE_AutomatedDefensiveMeasures"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <rangedTech>1</rangedTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="OskarPotocki.VFE.Mechanoid">
+        <xpath>Defs/ResearchProjectDef[defName="VFE_ProvisionsPackagingFactory"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <cookingTech>1</cookingTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="OskarPotocki.VFE.Mechanoid">
+        <xpath>Defs/ResearchProjectDef[defName="VFE_ElectronicsFabricationFactory" or defName="VFE_WearablesandTextilesFactory" or defName="VFE_BasicDroneAssembly"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <craftTech>1</craftTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="OskarPotocki.VFE.Mechanoid">
+        <xpath>Defs/ResearchProjectDef[defName="VFE_MedicinalCompoundingFactory"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <medTech>1</medTech>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+</Patch>

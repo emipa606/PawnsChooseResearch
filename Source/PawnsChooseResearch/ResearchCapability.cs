@@ -8,7 +8,7 @@ public class ResearchCapability
     public static bool IsIncapable(Pawn pawn, ResearchProjectDef researchProject)
     {
         if (!researchProject.HasModExtension<ResearchCategory>() ||
-            !Mod_PawnsChooseResearch.instance.Settings.mustHaveSkill)
+            !Mod_PawnsChooseResearch.Instance.Settings.mustHaveSkill)
         {
             return false;
         }
@@ -133,7 +133,7 @@ public class ResearchCapability
                 return true;
             }
 
-            if (Mod_PawnsChooseResearch.instance.Settings.vanillaTraitsActivated &&
+            if (Mod_PawnsChooseResearch.Instance.Settings.vanillaTraitsActivated &&
                 (trait.def == TraitDef.Named("VTE_RefinedPalate") ||
                  trait.def == TraitDef.Named("VTE_Gastronomist")) &&
                 researchProject.defName is "NutrientPaste" or "PackagedSurvivalMeal")

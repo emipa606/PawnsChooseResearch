@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationSequence" MayRequire="Mlie.SimplyMoreBridges">
+    <operations>
+      <li Class="PatchOperationAdd" MayRequire="Mlie.SimplyMoreBridges">
+        <xpath>Defs/ResearchProjectDef[defName="HeavyBridges"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <constructionTech>1</constructionTech>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+</Patch>

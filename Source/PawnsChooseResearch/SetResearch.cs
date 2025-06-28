@@ -12,7 +12,7 @@ public class SetResearch
     {
         var possibleProjects = Startup.PossibleResearchProjectDefs.Where(projectDef =>
             projectDef.CanStartNow && !ResearchCapability.IsIncapable(pawn, projectDef) &&
-            !ResearchCapability.IsAbhorrent(pawn, projectDef));
+            !ResearchCapability.IsAbhorrent(pawn, projectDef)).ToArray();
 
         if (!possibleProjects.Any())
         {
@@ -62,7 +62,8 @@ public class SetResearch
             }
         }
 
-        var possibleProjects = Startup.PossibleResearchProjectDefs.Where(projectDef => projectDef.CanStartNow);
+        var possibleProjects =
+            Startup.PossibleResearchProjectDefs.Where(projectDef => projectDef.CanStartNow).ToArray();
 
         if (!possibleProjects.Any())
         {
@@ -71,13 +72,13 @@ public class SetResearch
 
         if (possibleProjects.Count() == 1)
         {
-            Startup.currentProjField.SetValue(Find.ResearchManager, possibleProjects.First());
+            Startup.CurrentProjField.SetValue(Find.ResearchManager, possibleProjects.First());
             return;
         }
 
         if (pawns.Count == 0 && possibleProjects.TryRandomElement(out var result))
         {
-            Startup.currentProjField.SetValue(Find.ResearchManager, result);
+            Startup.CurrentProjField.SetValue(Find.ResearchManager, result);
             return;
         }
 
@@ -110,7 +111,7 @@ public class SetResearch
             highestScore = currentScore;
         }
 
-        Startup.currentProjField.SetValue(Find.ResearchManager, researchProjectDef);
+        Startup.CurrentProjField.SetValue(Find.ResearchManager, researchProjectDef);
         ResearchRecord.groupProject = researchProjectDef;
     }
 }

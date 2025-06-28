@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationSequence" MayRequire="Mlie.RC2.Core">
+    <operations>
+      <li Class="PatchOperationAdd" MayRequire="Mlie.RC2.Core">
+        <xpath>Defs/ResearchProjectDef[defName="RC2_BasicCooking" or defName="RC2_IntermediateCooking" or defName="RC2_AdvancedCooking" or defName="RC2_IntermediateBrewing" or defName="RC2_AdvancedBrewing"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <cookingTech>1</cookingTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="Mlie.RC2.Core">
+        <xpath>Defs/ResearchProjectDef[defName="RC2_BasicAgriculture" or defName="RC2_IntermediateAgriculture" or defName="RC2_IntermediateForestry" or defName="RC2_AdvancedAgriculture"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <plantTech>1</plantTech>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+</Patch>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationConditional">
+    <xpath>/Defs/ResearchProjectDef[defName="ResearchProject_RTCircuitBreakers" or defName="ResearchProject_RTMagneticShield"]</xpath>
+    <success>Always</success>
+    <match Class="PatchOperationAdd">
+      <xpath>Defs/ResearchProjectDef[defName="ResearchProject_RTCircuitBreakers" or defName="ResearchProject_RTMagneticShield"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+      <value>
+        <constructionTech>1</constructionTech>
+      </value>
+    </match>
+  </Operation>
+</Patch>

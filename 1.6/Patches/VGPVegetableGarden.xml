@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationSequence" MayRequire="dismarzero.VGP.VGPVegetableGarden">
+    <operations>
+      <li Class="PatchOperationAdd" MayRequire="dismarzero.VGP.VGPVegetableGarden">
+        <xpath>Defs/ResearchProjectDef[defName="agriculture" or defName="agricultureII" or defName="agricultureIII" or defName="agricultureIV" or defName="VG_Ambrosia"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <plantTech>1</plantTech>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+</Patch>

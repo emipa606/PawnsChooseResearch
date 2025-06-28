@@ -9,7 +9,7 @@ internal class TBnRE_RevEng
 {
     private static bool Prepare(MethodInfo original)
     {
-        return ModLister.GetActiveModWithIdentifier("GwinnBleidd.ResearchTweaks") != null;
+        return ModLister.GetActiveModWithIdentifier("GwinnBleidd.ResearchTweaks", true) != null;
     }
 
     private static MethodBase TargetMethod()
@@ -19,12 +19,12 @@ internal class TBnRE_RevEng
 
     private static void Postfix(ref ResearchProjectDef chosenResearchProject, Pawn usedBy)
     {
-        if (!Mod_PawnsChooseResearch.instance.Settings.TBnRE_Activated)
+        if (!Mod_PawnsChooseResearch.Instance.Settings.TBnRE_Activated)
         {
             return;
         }
 
-        if (Mod_PawnsChooseResearch.instance.Settings.groupResearch)
+        if (Mod_PawnsChooseResearch.Instance.Settings.groupResearch)
         {
             ResearchRecord.groupProject = chosenResearchProject;
             return;

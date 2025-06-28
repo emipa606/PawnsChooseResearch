@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- Vanilla Weapons Expanded -->
+  <Operation Class="PatchOperationSequence" MayRequire="VanillaExpanded.VWE">
+    <operations>
+      <li Class="PatchOperationAdd" MayRequire="VanillaExpanded.VWE">
+        <xpath>Defs/ResearchProjectDef[defName="VWE_Longbow" or defName="VWE_Crossbow" or defName="VWE_CompoundBow" or defName="VWE_Gunpowder" or defName="VWE_HeavyWeapons" or defName="VWE_Flamethrower" or defName="VWE_SpecializedFirearms" or defName="VWE_SpecializedFirearms" or defName="VWE_DesignatedMarksmanRifle" or defName="VWE_TacticalGrenades" or defName="VWE_LaserTargetingSystems" or defName="VWE_Quickdraw" or defName="VWE_LaserWeapons" or defName="VWE_UltratechLaserWeapons"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <rangedTech>1</rangedTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="VanillaExpanded.VWE">
+        <xpath>Defs/ResearchProjectDef[defName="VWE_TrenchWarfare"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <meleeTech>1</meleeTech>
+          <miningTech>1</miningTech>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+</Patch>

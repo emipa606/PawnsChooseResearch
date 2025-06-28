@@ -5,7 +5,7 @@ namespace PawnsChooseResearch;
 
 public class ResearchRecord : GameComponent
 {
-    public static List<ResearchProjectDef> currentProjects = [];
+    private static List<ResearchProjectDef> currentProjects = [];
 
     private static List<Pawn> trackedPawns = [];
 
@@ -20,7 +20,7 @@ public class ResearchRecord : GameComponent
 
     public static ResearchProjectDef CurrentProject(Pawn trackedPawn, bool showGroupProj = true)
     {
-        if (showGroupProj && Mod_PawnsChooseResearch.instance.Settings.groupResearch)
+        if (showGroupProj && Mod_PawnsChooseResearch.Instance.Settings.groupResearch)
         {
             return groupProject;
         }
@@ -38,10 +38,10 @@ public class ResearchRecord : GameComponent
         researchPlan[trackedPawn] = myProject;
     }
 
-    public static void UpdateResearchRecord()
+    private static void UpdateResearchRecord()
     {
-        if (Mod_PawnsChooseResearch.instance.Settings.groupResearch ||
-            Mod_PawnsChooseResearch.instance.Settings.restoreControl)
+        if (Mod_PawnsChooseResearch.Instance.Settings.groupResearch ||
+            Mod_PawnsChooseResearch.Instance.Settings.restoreControl)
         {
             return;
         }
@@ -74,7 +74,7 @@ public class ResearchRecord : GameComponent
             }
         }
 
-        Mod_PawnsChooseResearch.instance.Settings.CheckMods();
+        Mod_PawnsChooseResearch.Instance.Settings.CheckMods();
         base.FinalizeInit();
     }
 }

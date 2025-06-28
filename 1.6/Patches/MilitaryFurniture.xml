@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationSequence" MayRequire="CP.Military.Furniture">
+    <operations>
+      <li Class="PatchOperationAdd" MayRequire="CP.Military.Furniture">
+        <xpath>Defs/ResearchProjectDef[defName="RHResearch_RHFaction_Uniforms"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <craftTech>1</craftTech>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+</Patch>

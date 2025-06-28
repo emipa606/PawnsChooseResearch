@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- Android Expanded -->
+  <Operation Class="PatchOperationSequence" MayRequire="peptide.androidsexpanded">
+    <operations>
+      <li Class="PatchOperationAdd" MayRequire="peptide.androidsexpanded">
+        <xpath>Defs/ResearchProjectDef[defName="ChJAndroidDroidRepairParts" or defName="ChJAndroidDroidRepairKit" or defName="ChJAndroidSolarpanelApparel" or defName="ChJAndroidPortableChemfuelGenerator" or defName="ChJAndroidDroidBatteries" or defName="ChJAndroidMaidDress" or defName="ChJAndroidSpacerMaidDress" or defName="ChJDroidPrinter" or defName="ChJAndroidPrinter" or defName="ChJAndroidUpgrade_Hub" or defName="ChJAndroidUpgrade_Physique" or defName="ChJAndroidUpgrade_Skin" or defName="ChJAndroidUpgrade_Utility" or defName="ChJAndroidUpgrade_Proficiency" or defName="ChJAndroidUpgrade_Archotech" or defName="ChJBattleDroid"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <craftTech>1</craftTech>
+          <cyberTech>1</cyberTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="peptide.androidsexpanded">
+        <xpath>Defs/ResearchProjectDef[defName="Build_Drones" or defName="Build_SpacerDroids"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <craftTech>1</craftTech>
+          <cyberTech>1</cyberTech>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+</Patch>

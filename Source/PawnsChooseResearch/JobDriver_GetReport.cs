@@ -5,11 +5,9 @@ using Verse.AI;
 
 namespace PawnsChooseResearch;
 
-[HarmonyPatch]
-public class Patch_ResearchInspect
+[HarmonyPatch(typeof(JobDriver), nameof(JobDriver.GetReport))]
+public class JobDriver_GetReport
 {
-    [HarmonyPatch(typeof(JobDriver), "GetReport")]
-    [HarmonyPostfix]
     public static void Postfix(ref string __result, Pawn ___pawn)
     {
         if (__result != JobDefOf.Research.reportString)
@@ -17,8 +15,8 @@ public class Patch_ResearchInspect
             return;
         }
 
-        var researchProjectDef = (ResearchProjectDef)Startup.currentProjField.GetValue(Find.ResearchManager);
-        if (!Mod_PawnsChooseResearch.instance.Settings.restoreControl)
+        var researchProjectDef = (ResearchProjectDef)Startup.CurrentProjField.GetValue(Find.ResearchManager);
+        if (!Mod_PawnsChooseResearch.Instance.Settings.restoreControl)
         {
             researchProjectDef = ResearchRecord.CurrentProject(___pawn);
         }

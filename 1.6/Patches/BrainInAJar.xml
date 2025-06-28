@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationSequence" MayRequire="TranslucencY.BrainInAJar">
+    <operations>
+      <li Class="PatchOperationAdd" MayRequire="TranslucencY.BrainInAJar">
+        <xpath>Defs/ResearchProjectDef[defName="BrainInAJar"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <medTech>1</medTech>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+</Patch>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationSequence" MayRequire="Torann.ARimworldOfMagic">
+    <operations>
+      <li Class="PatchOperationAddModExtension" MayRequire="Torann.ARimworldOfMagic">
+        <xpath>Defs/ResearchProjectDef</xpath>
+        <value>
+          <li Class="PawnsChooseResearch.ResearchCategory">
+          </li>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="Torann.ARimworldOfMagic">
+        <xpath>Defs/ResearchProjectDef[defName="TM_ArcaneConstruction" or defName="TM_ArcaneFundamentals"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <coreTech>1</coreTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="Torann.ARimworldOfMagic">
+        <xpath>Defs/ResearchProjectDef[defName="TM_ArcaneForging"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <meleeTech>1</meleeTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="Torann.ARimworldOfMagic">
+        <xpath>Defs/ResearchProjectDef[defName="TM_MagicCircle" or defName="TM_Portals"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <miningTech>1</miningTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="Torann.ARimworldOfMagic">
+        <xpath>Defs/ResearchProjectDef[defName="TM_PlantCultivation"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <plantTech>1</plantTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="Torann.ARimworldOfMagic">
+        <xpath>Defs/ResearchProjectDef[defName="TM_ManaStorage" or defName="TM_ForgeReplication" or defName="TM_MagicyteRefining" or defName="TM_ArcaneCrafting" or defName="TM_ArcaneApparel" or defName="TM_ArcaneArtifacts"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <craftTech>1</craftTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="Torann.ARimworldOfMagic">
+        <xpath>Defs/ResearchProjectDef[defName="TM_Enchanting" or defName="TM_AdvancedEnchanting" or defName="TM_ExpertEnchanting"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <artTech>1</artTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="Torann.ARimworldOfMagic">
+        <xpath>Defs/ResearchProjectDef[defName="TM_MagicScribing" or defName="TM_AdvancedScribing" or defName="TM_MasterScribing"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <socialTech>1</socialTech>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+</Patch>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationSequence" MayRequire="rimsenal.core">
+    <operations>
+      <li Class="PatchOperationAdd" MayRequire="rimsenal.core">
+        <xpath>Defs/ResearchProjectDef[defName="ShardTech" or defName="MicrowaveTech" or defName="MoltenTech" or defName="SiegeTech" or defName="KineticTech" or defName="FocusTech" or defName="DefenceTech" or defName="ShardSentryTech" or defName="MicrowaveTurretTech" or defName="SiegeEmplacementTech" or defName="DefenceEmplacementTech" or defName="DirectedEMP" or defName="SmartWeapons" or defName="CrucibleTech" or defName="PlasmaTech" or defName="PlasmaMortarTech"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <rangedTech>1</rangedTech>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+</Patch>

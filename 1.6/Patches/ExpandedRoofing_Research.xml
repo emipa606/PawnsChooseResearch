@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationSequence" MayRequire="wit.expandedroofing">
+    <operations>
+      <li Class="PatchOperationAdd" MayRequire="wit.expandedroofing">
+        <xpath>Defs/ResearchProjectDef[defName="TransparentRoofProduction" or defName="SolarRoofProduction" or defName="ThickStoneRoofRemoval" or defName="ThickStoneRoofProduction"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <constructionTech>1</constructionTech>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+</Patch>

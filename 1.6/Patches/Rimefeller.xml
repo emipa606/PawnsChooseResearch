@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationSequence" MayRequire="Dubwise.Rimefeller">
+    <operations>
+      <li Class="PatchOperationAdd" MayRequire="Dubwise.Rimefeller">
+        <xpath>Defs/ResearchProjectDef[defName="SynthyleneProduction"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <coreTech>1</coreTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="Dubwise.Rimefeller">
+        <xpath>Defs/ResearchProjectDef[defName="ChemfuelRefining" or defName="SynthyleneProduction" or defName="ArtificialFloors"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <constructionTech>1</constructionTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="Dubwise.Rimefeller">
+        <xpath>Defs/ResearchProjectDef[defName="OilDrilling" or defName="DeepOilWells"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <miningTech>1</miningTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="Dubwise.Rimefeller">
+        <xpath>Defs/ResearchProjectDef[defName="Napalm" or defName="DeepOilWells" or defName="SynthyleneAdvComponents" or defName="SynthamideProduction" or defName="SynthamideCompositeProduction" or defName="PlasteelProduction" or defName="HyperweaveProduction"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <craftTech>1</craftTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="Dubwise.Rimefeller">
+        <xpath>Defs/ResearchProjectDef[defName="NeutroamineProduction" or defName="DeepOilWells"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <medTech>1</medTech>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+</Patch>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationConditional">
+    <xpath>/Defs/ResearchProjectDef[defName="VBY_Magnetic_Weapon_Research"]</xpath>
+    <success>Always</success>
+    <match Class="PatchOperationSequence">
+      <success>Always</success>
+      <operations>
+        <li Class="PatchOperationAdd">
+          <xpath>Defs/ResearchProjectDef[defName="VBY_Magnetic_Weapon_Research" or defName="VBY_Refined_Alien_Tech_Research" or defName="VBY_Kinetic_Weapon_Research" or defName="VBY_Elerium_Cannon" or defName="VBY_Defense_Matrix" or defName="VBY_Heavy_Weapons" or defName="VBY_Experimental_Weapons"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+          <value>
+            <rangedTech>1</rangedTech>
+          </value>
+        </li>
+        <li Class="PatchOperationTest">
+          <xpath>Defs/ResearchProjectDef[defName="VBY_Elerium_Crystals"]</xpath>
+        </li>
+        <li Class="PatchOperationAdd">
+          <xpath>Defs/ResearchProjectDef[defName="VBY_Elerium_Crystals"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+          <value>
+            <coreTech>1</coreTech>
+          </value>
+        </li>
+        <li Class="PatchOperationAdd">
+          <xpath>Defs/ResearchProjectDef[defName="VBY_Fusion_Weapon_Research" or defName="VBY_Refined_Alien_Blade_Research" or defName="VBY_Integrated_Warfare_Research"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+          <value>
+            <meleeTech>1</meleeTech>
+          </value>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+</Patch>

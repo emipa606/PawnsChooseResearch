@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationSequence" MayRequire="kentington.saveourship2">
+    <operations>
+      <li Class="PatchOperationAdd" MayRequire="kentington.saveourship2">
+        <xpath>Defs/ResearchProjectDef[defName="Holodeck_Basic" or defName="Holodeck_Standard"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <craftTech>1</craftTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="kentington.saveourship2">
+        <xpath>Defs/ResearchProjectDef[defName="Holodeck_AI"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <socialTech>1</socialTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="kentington.saveourship2">
+        <xpath>Defs/ResearchProjectDef[defName="ShipShuttleBay" or defName="ShipLifeSupport" or defName="ShuttlePersonal" or defName="ShuttleCargo" or defName="ShuttleHeavy" or defName="ShipSalvageBay"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <constructionTech>1</constructionTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="kentington.saveourship2">
+        <xpath>Defs/ResearchProjectDef[defName="ShipTurretLaser" or defName="ShipTurretPlasma" or defName="ShipTurretKinetic" or defName="ShipTurretMedium" or defName="ShipTurretLarge" or defName="ShipTorpedoes" or defName="ShipTurretAC"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <rangedTech>1</rangedTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="kentington.saveourship2">
+        <xpath>Defs/ResearchProjectDef[defName="ShipHeatsink" or defName="ShipShields" or defName="ShipCloaking"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <meleeTech>1</meleeTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="kentington.saveourship2">
+        <xpath>Defs/ResearchProjectDef[defName="Crittersleep"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <animalTech>1</animalTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="kentington.saveourship2">
+        <xpath>Defs/ResearchProjectDef[defName="ShipSpaceSuits" or defName="ShipSpaceSuitsHeavy" or defName="ShipCapacitor" or defName="HullFoam" or defName="ShipTurretLaser" or defName="ShipTurretPlasma" or defName="ShipTurretKinetic" or defName="ShipTurretMedium" or defName="ShipTurretLarge" or defName="ShipTorpedoes" or defName="ShipTurretAC"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <craftTech>1</craftTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="kentington.saveourship2">
+        <xpath>Defs/ResearchProjectDef[defName="ShipSensorClusterAdv"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <socialTech>1</socialTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="kentington.saveourship2">
+        <xpath>Defs/ResearchProjectDef[defName="ArchotechMechaniteWeapon"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <rangedTech>1</rangedTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="kentington.saveourship2">
+        <xpath>Defs/ResearchProjectDef[defName="ArchotechPsychicWeapon" or defName="ArchotechShields" or defName="ArchotechHeatsink"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <meleeTech>1</meleeTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="kentington.saveourship2">
+        <xpath>Defs/ResearchProjectDef[defName="ArchotechAnimals"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <animalTech>1</animalTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="kentington.saveourship2">
+        <xpath>Defs/ResearchProjectDef[defName="ArchotechPlants"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <plantTech>1</plantTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="kentington.saveourship2">
+        <xpath>Defs/ResearchProjectDef[defName="ArchotechMechanites" or defName="ArchotechBioMechanites" or defName="ArchotechVanometrics"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <craftTech>1</craftTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="kentington.saveourship2">
+        <xpath>Defs/ResearchProjectDef[defName="ArchotechBioMechanites" or defName="ArchotechBioMechanitesTwo" or defName="ArchotechPsychicField" or defName="ArchotechPsychicManipulation" or defName="ArchotechPsylink" or defName="ArchotechPsychicEffectors" or defName="ArchotechPsychicWeapon"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <socialTech>1</socialTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="kentington.saveourship2">
+        <xpath>Defs/ResearchProjectDef[defName="SoSArchotechOrgans"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <medTech>1</medTech>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+</Patch>

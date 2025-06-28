@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationSequence" MayRequire="rimofmadness.callofcthulhu.factions">
+    <operations>
+      <li Class="PatchOperationAdd" MayRequire="rimofmadness.callofcthulhu.factions">
+        <xpath>Defs/ResearchProjectDef[defName="ROM_OccupationClothing"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <craftTech>1</craftTech>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+</Patch>

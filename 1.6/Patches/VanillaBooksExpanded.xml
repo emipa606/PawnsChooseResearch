@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- Vanilla Books Expanded -->
+  <Operation Class="PatchOperationSequence" MayRequire="VanillaExpanded.VBooksE">
+    <operations>
+      <li Class="PatchOperationAdd" MayRequire="VanillaExpanded.VBooksE">
+        <xpath>Defs/ResearchProjectDef[defName="VBE_Writing" or defName="VBE_Printing"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <socialTech>1</socialTech>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+</Patch>

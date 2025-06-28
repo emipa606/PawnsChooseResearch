@@ -14,7 +14,7 @@ public class Startup
     private static int changedProjects;
     public static readonly List<ResearchProjectDef> PossibleResearchProjectDefs;
 
-    public static readonly FieldInfo currentProjField;
+    public static readonly FieldInfo CurrentProjField;
     public static readonly TraitDef Nerves = TraitDef.Named("Nerves");
     public static readonly TraitDef NaturalMood = TraitDef.Named("NaturalMood");
 
@@ -24,11 +24,11 @@ public class Startup
             ? DefDatabase<ResearchProjectDef>.AllDefsListForReading
                 .Where(def => def.knowledgeCategory == null).ToList()
             : DefDatabase<ResearchProjectDef>.AllDefsListForReading;
-        currentProjField = AccessTools.Field(typeof(ResearchManager), "currentProj");
+        CurrentProjField = AccessTools.Field(typeof(ResearchManager), "currentProj");
         var harmony = new Harmony("rimworld.pawnschooseresearch");
         harmony.PatchAll(Assembly.GetExecutingAssembly());
-        HarmonyUnpatching();
-        DefDatabase<StatDef>.Add(MakeProjectStatDef());
+        harmonyUnpatching();
+        DefDatabase<StatDef>.Add(makeProjectStatDef());
 
         foreach (var projectDef in PossibleResearchProjectDefs)
         {
@@ -44,7 +44,7 @@ public class Startup
                 continue;
             }
 
-            EvaluateResearchProject(projectDef);
+            evaluateResearchProject(projectDef);
         }
 
         if (changedProjects > 0)
@@ -53,17 +53,14 @@ public class Startup
         }
     }
 
-    private static void EvaluateResearchProject(ResearchProjectDef projectDef)
+    private static void evaluateResearchProject(ResearchProjectDef projectDef)
     {
         try
         {
             var modExtension = projectDef.GetModExtension<ResearchCategory>();
             if (modExtension == null)
             {
-                if (projectDef.modExtensions == null)
-                {
-                    projectDef.modExtensions = [];
-                }
+                projectDef.modExtensions ??= [];
 
                 projectDef.modExtensions?.Add(new ResearchCategory());
             }
@@ -87,7 +84,7 @@ public class Startup
             foreach (var def in projectDef.UnlockedDefs)
             {
                 LogMessage($"Evaluating {def.LabelCap}");
-                var thingEnum = EvaluateThing(def);
+                var thingEnum = evaluateThing(def);
                 if (thingEnum == ResearchType.None)
                 {
                     continue;
@@ -180,7 +177,7 @@ public class Startup
         }
     }
 
-    private static ResearchType EvaluateThing(Def def)
+    private static ResearchType evaluateThing(Def def)
     {
         if (def == null)
         {
@@ -260,7 +257,7 @@ public class Startup
 
             if (thingDef.recipes?.Any() != null)
             {
-                var normalRecipes = thingDef.recipes.Where(recipeDef => recipeDef.workSkill != null);
+                var normalRecipes = thingDef.recipes.Where(recipeDef => recipeDef.workSkill != null).ToArray();
                 var mechRecipesCount = thingDef.recipes.Count(recipeDef => recipeDef.mechanitorOnlyRecipe);
 
                 if (!normalRecipes.Any())
@@ -346,11 +343,11 @@ public class Startup
         }
     }
 
-    private static void HarmonyUnpatching()
+    private static void harmonyUnpatching()
     {
         var method = typeof(ResearchManager).GetMethod("FinishProject");
         var enumerable = Harmony.GetPatchInfo(method)?.Prefixes
-            ?.Where(p => p.owner is "Fluffy.ResearchTree" or "rimworld.ResearchPal");
+            ?.Where(p => p.owner is "Fluffy.ResearchTree" or "rimworld.ResearchPal").ToArray();
         if (enumerable == null || !enumerable.Any())
         {
             return;
@@ -364,7 +361,7 @@ public class Startup
         }
     }
 
-    private static StatDef MakeProjectStatDef()
+    private static StatDef makeProjectStatDef()
     {
         var statDef = new StatDef
         {
@@ -381,7 +378,7 @@ public class Startup
 
     public static void LogMessage(string message, bool force = false)
     {
-        if (force || Mod_PawnsChooseResearch.instance.Settings.verboseLogging)
+        if (force || Mod_PawnsChooseResearch.Instance.Settings.verboseLogging)
         {
             Log.Message($"[PawnsChooseResearch]: {message}");
         }

@@ -12,24 +12,24 @@ public class ResearchPreferences
         {
             Startup.LogMessage(
                 $"{pawn.NameFullColored} checking {researchProject.LabelCap}. \n{researchProject.GetModExtension<ResearchCategory>()}");
-            if (Mod_PawnsChooseResearch.instance.Settings.checkPassions)
+            if (Mod_PawnsChooseResearch.Instance.Settings.checkPassions)
             {
-                preferenceValue += GetPassionScore(pawn, researchProject);
+                preferenceValue += getPassionScore(pawn, researchProject);
             }
 
-            if (Mod_PawnsChooseResearch.instance.Settings.checkTraits)
+            if (Mod_PawnsChooseResearch.Instance.Settings.checkTraits)
             {
-                preferenceValue += GetTraitScore(pawn, researchProject);
+                preferenceValue += getTraitScore(pawn, researchProject);
             }
 
-            preferenceValue += GetSpecialTraitScore(pawn, researchProject);
+            preferenceValue += getSpecialTraitScore(pawn, researchProject);
             if (researchProject.GetModExtension<ResearchCategory>().coreTech > 0)
             {
                 preferenceValue += pawn.skills.GetSkill(SkillDefOf.Intellectual).Level * 0.05f;
             }
         }
 
-        if (Mod_PawnsChooseResearch.instance.Settings.preferSimple &&
+        if (Mod_PawnsChooseResearch.Instance.Settings.preferSimple &&
             (int)researchProject.techLevel > (int)Faction.OfPlayer.def.techLevel)
         {
             preferenceValue -= (researchProject.techLevel - Faction.OfPlayerSilentFail.def.techLevel) /
@@ -39,7 +39,7 @@ public class ResearchPreferences
         return preferenceValue * Rand.Range(0.5f, 1f);
     }
 
-    private static float GetPassionScore(Pawn pawn, ResearchProjectDef researchProject)
+    private static float getPassionScore(Pawn pawn, ResearchProjectDef researchProject)
     {
         var num = 0f;
         var foundType = false;
@@ -117,7 +117,7 @@ public class ResearchPreferences
         return num;
     }
 
-    private static float GetTraitScore(Pawn pawn, ResearchProjectDef researchProject)
+    private static float getTraitScore(Pawn pawn, ResearchProjectDef researchProject)
     {
         var num = 0f;
         var allTraits = pawn.story.traits.allTraits;
@@ -294,7 +294,7 @@ public class ResearchPreferences
         return num;
     }
 
-    private static float GetSpecialTraitScore(Pawn pawn, ResearchProjectDef researchProject)
+    private static float getSpecialTraitScore(Pawn pawn, ResearchProjectDef researchProject)
     {
         var num = 0f;
         var allTraits = pawn.story.traits.allTraits;
@@ -351,7 +351,7 @@ public class ResearchPreferences
                 }
             }
 
-            if (Mod_PawnsChooseResearch.instance.Settings.vanillaTraitsActivated)
+            if (Mod_PawnsChooseResearch.Instance.Settings.vanillaTraitsActivated)
             {
                 num += VTE_Integration.GetSpecialTraitScore_VTE(researchProject, def);
             }

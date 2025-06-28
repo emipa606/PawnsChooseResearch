@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationSequence" MayRequire="fluffy.colonymanager">
+    <operations>
+      <li Class="PatchOperationAdd" MayRequire="fluffy.colonymanager">
+        <xpath>Defs/ResearchProjectDef[defName="ManagingSoftware"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <coreTech>1</coreTech>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+</Patch>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationSequence" MayRequire="Mlie.QuestionableEthicsEnhanced">
+    <operations>
+      <li Class="PatchOperationAdd" MayRequire="Mlie.QuestionableEthicsEnhanced">
+        <xpath>Defs/ResearchProjectDef[defName="QE_OrganVat" or defName="QE_GenomeSequencing" or defName="QE_VatGrownBeings" or defName="QE_Neutroamine" or defName="QE_OrganVat_InternalOrgans" or defName="QE_OrganVat_Bones"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <medTech>1</medTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="Mlie.QuestionableEthicsEnhanced">
+        <xpath>Defs/ResearchProjectDef[defName="QE_BrainScanning" or defName="QE_NerveStapling"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <craftTech>1</craftTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="Mlie.QuestionableEthicsEnhanced">
+        <xpath>Defs/ResearchProjectDef[defName="QE_Distillation" or defName="QE_Edibles" or defName="QE_AdvancedRefining"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <cookingTech>1</cookingTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="Mlie.QuestionableEthicsEnhanced">
+        <xpath>Defs/ResearchProjectDef[defName="QE_OrganVat" or defName="QE_VatGrownBeings" or defName="QE_OrganVat_InternalOrgans" or defName="QE_OrganVat_Bones"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <plantTech>1</plantTech>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+</Patch>
