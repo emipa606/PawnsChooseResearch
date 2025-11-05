@@ -4,6 +4,12 @@
   "CanRemove": "2",
   "PreviewVersion": "1.6",
   "SocialImageSet": true,
-  "LastXmlCleaning": "2025-06-28T21:06:45.4478769+02:00",
-  "SearchTags": " random"
+  "LastXmlCleaning": "2025-11-05T22:14:28.8693481+01:00",
+  "SearchTags": " random",
+  "Patches": true,
+  "Defs": false,
+  "Assemblies": true,
+  "LinesOfCode": 61212,
+  "LinesOfXML": 106064,
+  "CodeBaseSize": 82
 }

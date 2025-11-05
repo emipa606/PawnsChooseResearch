@@ -1,15 +1,15 @@
 # [PawnsChooseResearch (Continued)](https://steamcommunity.com/sharedfiles/filedetails/?id=2904905818)
 
-![Image](https://i.imgur.com/buuPQel.png)
+![Image](https://i.postimg.cc/1X4HT06h/Info.png)
 
 Update of Cozarkians mod
 https://steamcommunity.com/sharedfiles/filedetails/?id=2230044022
 
 - Added logic for projects that do not have specific patches, so research-projects from other mods should now mostly have an appropriate category set.
 
-![Image](https://i.imgur.com/pufA0kM.png)
+![Image](https://i.postimg.cc/8csH3dWV/Notice.png)
 	
-![Image](https://i.imgur.com/Z4GOv8H.png)
+![Image](https://i.postimg.cc/hvhrw8xB/Original-Description.png)
 
 # What it Does
 
@@ -123,13 +123,13 @@ Vanilla Traits Expanded
 
 Except for research project assignment, this mod leaves the vanilla research system intact. Thus, it should be compatible with most other research mods. However, it's not compatible with Random Research. 
 
-![Image](https://i.imgur.com/PwoNOj4.png)
+![Image](https://i.postimg.cc/x8qR7GH9/Reporting-Issues.png)
 
 
 
 -  See if the the error persists if you just have this mod and its requirements active.
 -  If not, try adding your other mods until it happens again.
--  Post your error-log using [HugsLib](https://steamcommunity.com/workshop/filedetails/?id=818773962) or the standalone [Uploader](https://steamcommunity.com/sharedfiles/filedetails/?id=2873415404) and command Ctrl+F12
+-  Always post your log using the [Log Uploader](https://steamcommunity.com/sharedfiles/filedetails/?id=2873415404)
 -  For best support, please use the Discord-channel for error-reporting.
 -  Do not report errors by making a discussion-thread, I get no notification of that.
 -  If you have the solution for a problem, please post it to the GitHub repository.

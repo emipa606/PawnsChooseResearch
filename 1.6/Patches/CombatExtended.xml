@@ -9,21 +9,17 @@
           <rangedTech>1</rangedTech>
         </value>
       </li>
-      <li Class="PatchOperationTest" MayRequire="CETeam.CombatExtended">
+      <li Class="PatchOperationConditional" MayRequire="CETeam.CombatExtended">
         <xpath>Defs/ResearchProjectDef[defName="VFES_Artillery_Debug"]</xpath>
-      </li>
-      <li Class="PatchOperationAddModExtension" MayRequire="CETeam.CombatExtended">
-        <xpath>Defs/ResearchProjectDef[defName="VFES_Artillery_Debug"]</xpath>
-        <value>
-          <li Class="PawnsChooseResearch.ResearchCategory">
-          </li>
-        </value>
-      </li>
-      <li Class="PatchOperationAdd" MayRequire="CETeam.CombatExtended">
-        <xpath>Defs/ResearchProjectDef[defName="VFES_Artillery_Debug"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
-        <value>
-          <neverTech>1</neverTech>
-        </value>
+        <success>Always</success>
+        <match Class="PatchOperationAddModExtension" MayRequire="CETeam.CombatExtended">
+          <xpath>Defs/ResearchProjectDef[defName="VFES_Artillery_Debug"]</xpath>
+          <value>
+            <li Class="PawnsChooseResearch.ResearchCategory">
+              <neverTech>1</neverTech>
+            </li>
+          </value>
+        </match>
       </li>
     </operations>
   </Operation>
