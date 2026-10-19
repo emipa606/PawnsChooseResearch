@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationSequence" MayRequire="VanillaExpanded.VanillaTraitsExpanded">
+    <operations>
+      <li Class="PatchOperationAdd" MayRequire="VanillaExpanded.VanillaTraitsExpanded">
+        <xpath>Defs/TraitDef[defName="VTE_AbsentMinded" or defName="VTE_Submissive"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <progressTech>1</progressTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="VanillaExpanded.VanillaTraitsExpanded">
+        <xpath>Defs/TraitDef[defName="VTE_Eccentric" or defName="VTE_Perfectionist" or defName="VTE_Prodigy"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <progressTech>-1</progressTech>
+        </value>
+      </li>
+      <!-- Tech Level -->
+      <li Class="PatchOperationAdd" MayRequire="VanillaExpanded.VanillaTraitsExpanded">
+        <xpath>Defs/TraitDef[defName="VTE_Eccentric" or defName="VTE_Academian"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <complexTech>1</complexTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="VanillaExpanded.VanillaTraitsExpanded">
+        <xpath>Defs/TraitDef[defName="VTE_Technophobe" or defName="VTE_Dunce"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <complexTech>-1</complexTech>
+        </value>
+      </li>
+      <!-- Shooting -->
+      <li Class="PatchOperationAdd" MayRequire="VanillaExpanded.VanillaTraitsExpanded">
+        <xpath>Defs/TraitDef[defName="VTE_Brave"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <rangedTech>1</rangedTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="VanillaExpanded.VanillaTraitsExpanded">
+        <xpath>Defs/TraitDef[defName="VTE_Coward"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <rangedTech>-1</rangedTech>
+        </value>
+      </li>
+      <!-- Melee -->
+      <li Class="PatchOperationAdd" MayRequire="VanillaExpanded.VanillaTraitsExpanded">
+        <xpath>Defs/TraitDef[defName="VTE_Brave" or defName="VTE_MartialArtist" or defName="VTE_DrunkenMaster"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <meleeTech>1</meleeTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="VanillaExpanded.VanillaTraitsExpanded">
+        <xpath>Defs/TraitDef[defName="VTE_Coward"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <meleeTech>-1</meleeTech>
+        </value>
+      </li>
+      <!-- Construction -->
+      <li Class="PatchOperationAdd" MayRequire="VanillaExpanded.VanillaTraitsExpanded">
+        <xpath>Defs/TraitDef[defName="VTE_Groundbreaker"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <constructionTech>1</constructionTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="VanillaExpanded.VanillaTraitsExpanded">
+        <xpath>Defs/TraitDef[defName="VTE_Clumsy"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <constructionTech>-1</constructionTech>
+        </value>
+      </li>
+      <!-- Mining -->
+      <li Class="PatchOperationAdd" MayRequire="VanillaExpanded.VanillaTraitsExpanded">
+        <xpath>Defs/TraitDef[defName="VTE_Groundbreaker"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <miningTech>1</miningTech>
+        </value>
+      </li>
+      <!-- Cooking-->
+      <li Class="PatchOperationAdd" MayRequire="VanillaExpanded.VanillaTraitsExpanded">
+        <xpath>Defs/TraitDef[defName="VTE_RefinedPalate" or defName="VTE_Gastronomist"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <cookingTech>1</cookingTech>
+        </value>
+      </li>
+      <!-- Planting -->
+      <li Class="PatchOperationAdd" MayRequire="VanillaExpanded.VanillaTraitsExpanded">
+        <xpath>Defs/TraitDef[defName="VTE_Stoner" or defName="VTE_Ecologist"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <plantTech>1</plantTech>
+        </value>
+      </li>
+      <!-- Animal -->
+      <li Class="PatchOperationAdd" MayRequire="VanillaExpanded.VanillaTraitsExpanded">
+        <xpath>Defs/TraitDef[defName="VTE_AnimalLover" or defName="VTE_CatPerson" or defName="VTE_DogPerson" or defName="VTE_Menagerist" or defName="VTE_Ecologist"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <animalTech>1</animalTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="VanillaExpanded.VanillaTraitsExpanded">
+        <xpath>Defs/TraitDef[defName="VTE_AnimalHater"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <animalTech>-1</animalTech>
+        </value>
+      </li>
+      <!-- Crafting -->
+      <li Class="PatchOperationAdd" MayRequire="VanillaExpanded.VanillaTraitsExpanded">
+        <xpath>Defs/TraitDef[defName="VTE_Tycoon"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <craftTech>1</craftTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="VanillaExpanded.VanillaTraitsExpanded">
+        <xpath>Defs/TraitDef[defName="VTE_Clumsy"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <craftTech>-1</craftTech>
+        </value>
+      </li>
+      <!-- Artistic -->
+      <li Class="PatchOperationAdd" MayRequire="VanillaExpanded.VanillaTraitsExpanded">
+        <xpath>Defs/TraitDef[defName="VTE_Snob"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <artTech>1</artTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="VanillaExpanded.VanillaTraitsExpanded">
+        <xpath>Defs/TraitDef[defName="VTE_Clumsy"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <artTech>-1</artTech>
+        </value>
+      </li>
+      <!-- Medical/Drugs -->
+      <li Class="PatchOperationAdd" MayRequire="VanillaExpanded.VanillaTraitsExpanded">
+        <xpath>Defs/TraitDef[defName="VTE_MadSurgeon" or defName="VTE_Academian"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <medTech>1</medTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="VanillaExpanded.VanillaTraitsExpanded">
+        <xpath>Defs/TraitDef[defName="VTE_Squeamish"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <medTech>-1</medTech>
+        </value>
+      </li>
+      <!-- Social -->
+      <li Class="PatchOperationAdd" MayRequire="VanillaExpanded.VanillaTraitsExpanded">
+        <xpath>Defs/TraitDef[defName="VTE_FunLoving"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <socialTech>1</socialTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="VanillaExpanded.VanillaTraitsExpanded">
+        <xpath>Defs/TraitDef[defName="VTE_Vengeful" or defName="VTE_Rebel" or defName="VTE_Anxious" or defName="VTE_Desensitized" or defName="VTE_Schizoid"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <socialTech>-1</socialTech>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+</Patch>

@@ -9,8 +9,6 @@ internal class Mod_PawnsChooseResearch : Mod
     private static string currentVersion;
     public static Mod_PawnsChooseResearch Instance;
 
-    private ModSettings_PawnsChooseResearch settings;
-
     public Mod_PawnsChooseResearch(ModContentPack content)
         : base(content)
     {
@@ -25,9 +23,9 @@ internal class Mod_PawnsChooseResearch : Mod
     {
         get
         {
-            settings ??= GetSettings<ModSettings_PawnsChooseResearch>();
+            field ??= GetSettings<ModSettings_PawnsChooseResearch>();
 
-            return settings;
+            return field;
         }
     }
 

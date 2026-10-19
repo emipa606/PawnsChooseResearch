@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- Vanilla Furniture Expanded - Spacer Module (by Veralin) -->
+  <Operation Class="PatchOperationSequence" MayRequire="VanillaExpanded.VFESpacer">
+    <operations>
+      <li Class="PatchOperationAdd" MayRequire="VanillaExpanded.VFESpacer">
+        <xpath>Defs/ResearchProjectDef[defName="SpacerFurniture" or defName="SpacerElectronics" or defName="MechaniteRestoration"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <craftTech>1</craftTech>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+</Patch>

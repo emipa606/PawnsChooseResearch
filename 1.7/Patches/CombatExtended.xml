@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- Combat Extended -->
+  <Operation Class="PatchOperationSequence" MayRequire="CETeam.CombatExtended">
+    <operations>
+      <li Class="PatchOperationAdd" MayRequire="CETeam.CombatExtended">
+        <xpath>Defs/ResearchProjectDef[defName="CE_TurretHeavyWeapons" or defName="CE_ChargeTurret" or defName="CE_HeavyTurret" or defName="CE_Launchers" or defName="CE_AdvancedLaunchers" or defName="CE_AdvancedAmmo"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <rangedTech>1</rangedTech>
+        </value>
+      </li>
+      <li Class="PatchOperationConditional" MayRequire="CETeam.CombatExtended">
+        <xpath>Defs/ResearchProjectDef[defName="VFES_Artillery_Debug"]</xpath>
+        <success>Always</success>
+        <match Class="PatchOperationAddModExtension" MayRequire="CETeam.CombatExtended">
+          <xpath>Defs/ResearchProjectDef[defName="VFES_Artillery_Debug"]</xpath>
+          <value>
+            <li Class="PawnsChooseResearch.ResearchCategory">
+              <neverTech>1</neverTech>
+            </li>
+          </value>
+        </match>
+      </li>
+    </operations>
+  </Operation>
+</Patch>

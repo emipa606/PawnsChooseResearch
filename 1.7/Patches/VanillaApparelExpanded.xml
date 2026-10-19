@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- Vanilla Apparel Expanded -->
+  <Operation Class="PatchOperationSequence" MayRequire="VanillaExpanded.VAPPE">
+    <operations>
+      <li Class="PatchOperationAdd" MayRequire="VanillaExpanded.VAPPE">
+        <xpath>Defs/ResearchProjectDef[defName="VAE_CasualWear" or defName="VAE_FormalWear" or defName="VAE_WorkAttire" or defName="VAE_SterileAttire" or defName="VAE_MilitaryClothing"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <craftTech>1</craftTech>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+</Patch>

@@ -3,7 +3,7 @@ using Verse;
 
 namespace PawnsChooseResearch;
 
-public class ResearchPreferences
+public static class ResearchPreferences
 {
     public static float GetPreferenceScore(Pawn pawn, ResearchProjectDef researchProject)
     {

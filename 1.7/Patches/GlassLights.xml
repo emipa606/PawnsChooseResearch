@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationSequence" MayRequire="NanoCE.GlassLights">
+    <operations>
+      <li Class="PatchOperationAdd" MayRequire="NanoCE.GlassLights">
+        <xpath>Defs/ResearchProjectDef[defName="GlassworksResearch" or defName="ReinforcedGlassResearch"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <constructionTech>1</constructionTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="NanoCE.GlassLights">
+        <xpath>Defs/ResearchProjectDef[defName="DecorativeGlassResearch"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <artTech>1</artTech>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+</Patch>

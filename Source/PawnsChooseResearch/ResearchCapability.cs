@@ -3,7 +3,7 @@ using Verse;
 
 namespace PawnsChooseResearch;
 
-public class ResearchCapability
+public static class ResearchCapability
 {
     public static bool IsIncapable(Pawn pawn, ResearchProjectDef researchProject)
     {

@@ -3,7 +3,7 @@ using Verse;
 
 namespace PawnsChooseResearch;
 
-public class VTE_Integration
+public static class VTE_Integration
 {
     public static float GetSpecialTraitScore_VTE(ResearchProjectDef researchProject, TraitDef curTrait)
     {

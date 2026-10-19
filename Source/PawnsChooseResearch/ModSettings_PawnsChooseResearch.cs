@@ -4,6 +4,7 @@ namespace PawnsChooseResearch;
 
 public class ModSettings_PawnsChooseResearch : ModSettings
 {
+    public bool TBnRE_Activated = true;
     public bool checkPassions = true;
 
     public bool checkTraits = true;
@@ -16,8 +17,6 @@ public class ModSettings_PawnsChooseResearch : ModSettings
     public bool preferSimple = true;
 
     public bool restoreControl;
-
-    public bool TBnRE_Activated = true;
 
     public bool vanillaTraitsActivated;
 

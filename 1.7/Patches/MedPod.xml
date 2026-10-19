@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- MedPod -->
+  <Operation Class="PatchOperationSequence" MayRequire="sumghai.medpod">
+    <operations>
+      <li Class="PatchOperationAdd" MayRequire="sumghai.medpod">
+        <xpath>Defs/ResearchProjectDef[@Name="MedPodResearchProjectBase"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <medTech>1</medTech>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+</Patch>

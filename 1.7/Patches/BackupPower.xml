@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- Backup_Power-->
+  <Operation Class="PatchOperationSequence" MayRequire="Fluffy.BackupPower">
+    <operations>
+      <li Class="PatchOperationAdd" MayRequire="Fluffy.BackupPower">
+        <xpath>Defs/ResearchProjectDef[defName="BackupPower"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <craftTech>1</craftTech>
+          <constructionTech>1</constructionTech>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+</Patch>

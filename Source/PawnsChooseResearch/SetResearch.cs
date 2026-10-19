@@ -6,7 +6,7 @@ using Verse;
 
 namespace PawnsChooseResearch;
 
-public class SetResearch
+public static class SetResearch
 {
     public static void SetRandomResearch(Pawn pawn)
     {
@@ -19,15 +19,15 @@ public class SetResearch
             return;
         }
 
-        if (possibleProjects.Count() == 1)
+        if (possibleProjects.Length == 1)
         {
-            ResearchRecord.SetResearchPlan(pawn, possibleProjects.First());
+            ResearchRecord.SetResearchPlan(pawn, possibleProjects[0]);
             return;
         }
 
         var researchProjectDef = new ResearchProjectDef();
         var highestScore = -100f;
-        foreach (var researchProject in possibleProjects.InRandomOrder().Take(Math.Min(possibleProjects.Count(), 10)))
+        foreach (var researchProject in possibleProjects.InRandomOrder().Take(Math.Min(possibleProjects.Length, 10)))
         {
             var currentScore = ResearchPreferences.GetPreferenceScore(pawn, researchProject);
             if (currentScore <= highestScore && researchProjectDef != null)
@@ -53,12 +53,10 @@ public class SetResearch
                 continue;
             }
 
-            foreach (var pawn in map.mapPawns.FreeColonistsSpawned)
+            foreach (var pawn in map.mapPawns.FreeColonistsSpawned.Where(pawn =>
+                         pawn.workSettings.WorkIsActive(WorkTypeDefOf.Research)))
             {
-                if (pawn.workSettings.WorkIsActive(WorkTypeDefOf.Research))
-                {
-                    pawns.Add(pawn);
-                }
+                pawns.Add(pawn);
             }
         }
 
@@ -70,9 +68,9 @@ public class SetResearch
             return;
         }
 
-        if (possibleProjects.Count() == 1)
+        if (possibleProjects.Length == 1)
         {
-            Startup.CurrentProjField.SetValue(Find.ResearchManager, possibleProjects.First());
+            Startup.CurrentProjField.SetValue(Find.ResearchManager, possibleProjects[0]);
             return;
         }
 
@@ -86,7 +84,7 @@ public class SetResearch
         var pawnsCount = 1 + pawns.Count;
 
         var researchProjectDefs =
-            possibleProjects.InRandomOrder().Take(Math.Min(possibleProjects.Count(), 20 + pawnsCount));
+            possibleProjects.InRandomOrder().Take(Math.Min(possibleProjects.Length, 20 + pawnsCount));
 
         var researchProjectDef = new ResearchProjectDef();
         var highestScore = -100f;

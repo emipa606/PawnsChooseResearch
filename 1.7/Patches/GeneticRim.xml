@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationSequence" MayRequire="sarg.geneticrim">
+    <operations>
+      <li Class="PatchOperationAdd" MayRequire="sarg.geneticrim">
+        <xpath>Defs/ResearchProjectDef[defName="GR_GeneticEngineering" or defName="GR_InsectoidGenome" or defName="GR_ReptilianGenome" or defName="GR_HumanoidGeneticEngineering" or defName="GR_HybridImplantology" or defName="GR_AdvancedGeneticEngineering" or defName="GR_GeneDuplication" or defName="GR_GenetrainerRepurposing" or defName="GR_AnimalEnrichment" or defName="GR_AgeDrugs" or defName="GR_AnimalControl"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <animalTech>1</animalTech>
+          <cyberTech>1</cyberTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="sarg.geneticrim">
+        <xpath>Defs/ResearchProjectDef[defName="GR_GeneticEngineering" or defName="GR_ArchotechProject"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <coreTech>1</coreTech>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+</Patch>

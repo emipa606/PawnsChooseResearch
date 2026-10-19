@@ -5,19 +5,19 @@ using Verse;
 namespace PawnsChooseResearch;
 
 [HarmonyPatch]
-internal class TBnRE_RevEng
+internal static class TBnRE_RevEng
 {
-    private static bool Prepare(MethodInfo original)
+    public static bool Prepare(MethodInfo original)
     {
         return ModLister.GetActiveModWithIdentifier("GwinnBleidd.ResearchTweaks", true) != null;
     }
 
-    private static MethodBase TargetMethod()
+    public static MethodBase TargetMethod()
     {
         return AccessTools.Method(GenTypes.GetTypeInAnyAssembly("TBnRE.Utility"), "BoostResearch");
     }
 
-    private static void Postfix(ref ResearchProjectDef chosenResearchProject, Pawn usedBy)
+    public static void Postfix(ref ResearchProjectDef chosenResearchProject, Pawn usedBy)
     {
         if (!Mod_PawnsChooseResearch.Instance.Settings.TBnRE_Activated)
         {

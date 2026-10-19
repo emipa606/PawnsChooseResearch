@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- or defName=""-->
+  <Operation Class="PatchOperationSequence" MayRequire="Epona.EponaRenaissance">
+    <!--<success>Always</success>-->
+    <operations>
+      <li Class="PatchOperationAdd" MayRequire="Epona.EponaRenaissance">
+        <xpath>Defs/ResearchProjectDef[defName="Epona_Research_SteamGatling" or defName="Epona_Research_Munition" or defName="Epona_Research_HandCannon" or defName="Epona_Research_Cannon" or defName="Epona_Research_MonsMeg"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <rangedTech>1</rangedTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="Epona.EponaRenaissance">
+        <xpath>Defs/ResearchProjectDef[defName="Epona_Research_FullPlate" or defName="Epona_Research_Shield" or defName="Epona_Research_Steam" or defName="Epona_Research_Munition" or defName="Epona_Research_Saw" or defName="Epona_Research_JackofPlate"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <meleeTech>1</meleeTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="Epona.EponaRenaissance">
+        <xpath>Defs/ResearchProjectDef[defName="Epona_Research_Bombarrot" ]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <constructionTech>1</constructionTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="Epona.EponaRenaissance">
+        <xpath>Defs/ResearchProjectDef[defName="Epona_Research_Kitchen"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <cookingTech>1</cookingTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="Epona.EponaRenaissance">
+        <xpath>Defs/ResearchProjectDef[defName="Epona_Research_Space" or defName="Epona_Research_Smith" or defName="Epona_Research_Sewing" or defName="Epona_Research_AdvancedSewing" or defName="Epona_Research_Cannon" or defName="Epona_Research_MonsMeg"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <craftTech>1</craftTech>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+</Patch>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationSequence" MayRequire="Albion.SparklingWorlds.Full">
+    <success>Always</success>
+    <operations>
+      <li Class="PatchOperationAdd" MayRequire="Albion.SparklingWorlds.Full">
+        <xpath>Defs/ResearchProjectDef[defName="AdvComputingSW"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <coreTech>1</coreTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="Albion.SparklingWorlds.Full">
+        <xpath>Defs/ResearchProjectDef[defName="AdvLauncherSystemsSW" or defName="OrbitalLaunchSW" or defName="RailgunSW" or defName="PlasmaGunnerySW" or defName="NervShockerRangedSW"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <rangedTech>1</rangedTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="Albion.SparklingWorlds.Full">
+        <xpath>Defs/ResearchProjectDef[defName="AdvPowerSW"]</xpath>
+        <value>
+          <constructionTech>1</constructionTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="Albion.SparklingWorlds.Full">
+        <xpath>Defs/ResearchProjectDef[defName="MatterweavingSW" or defName="PsychicFoilWeavingSW" or defName="MechaniteAssemblingSW" or defName="LuciferiumProdSW" or defName="AdvancedMechanitesSW"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <craftTech>1</craftTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="Albion.SparklingWorlds.Full">
+        <xpath>Defs/ResearchProjectDef[defName="BrainImplantPrintingSW" or defName="MindAlteringTechSW"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <medTech>1</medTech>
+          <cyberTech>1</cyberTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="Albion.SparklingWorlds.Full">
+        <xpath>Defs/ResearchProjectDef[defName="GlitterworldMedProdSW" or defName="GlitterworldHospitalBedSW"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <medTech>1</medTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAddModExtension" MayRequire="Albion.SparklingWorlds.Full">
+        <xpath>Defs/ResearchProjectDef[defName="NervShockDeliverySW"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <meleeTech>1</meleeTech>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+</Patch>

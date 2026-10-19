@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationSequence" MayRequire="dismarzero.VGP.VGPGardenDrinks">
+    <operations>
+      <li Class="PatchOperationAdd" MayRequire="dismarzero.VGP.VGPGardenDrinks">
+        <xpath>Defs/ResearchProjectDef[defName="VG_industrialfermenting" or defName="VG_PrecursorBulk"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <cookingTech>1</cookingTech>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+</Patch>

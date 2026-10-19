@@ -1,15 +1,15 @@
 # [PawnsChooseResearch (Continued)](https://steamcommunity.com/sharedfiles/filedetails/?id=2904905818)
 
-![Image](https://i.postimg.cc/1X4HT06h/Info.png)
+![Image](https://img.litet.net/logos/Info.png)
 
 Update of Cozarkians mod
 https://steamcommunity.com/sharedfiles/filedetails/?id=2230044022
 
 - Added logic for projects that do not have specific patches, so research-projects from other mods should now mostly have an appropriate category set.
 
-![Image](https://i.postimg.cc/8csH3dWV/Notice.png)
+![Image](https://img.litet.net/logos/Notice.png)
 	
-![Image](https://i.postimg.cc/hvhrw8xB/Original-Description.png)
+![Image](https://img.litet.net/logos/OriginalDescription.png)
 
 # What it Does
 
@@ -123,7 +123,7 @@ Vanilla Traits Expanded
 
 Except for research project assignment, this mod leaves the vanilla research system intact. Thus, it should be compatible with most other research mods. However, it's not compatible with Random Research. 
 
-![Image](https://i.postimg.cc/x8qR7GH9/Reporting-Issues.png)
+![Image](https://img.litet.net/logos/ReportingIssues.png)
 
 
 
@@ -137,4 +137,4 @@ Except for research project assignment, this mod leaves the vanilla research sys
 
  
 
-[![Image](https://img.shields.io/github/v/release/emipa606/PawnsChooseResearch?label=latest%20version&style=plastic&color=9f1111&labelColor=black)](https://steamcommunity.com/sharedfiles/filedetails/changelog/2904905818) | tags:  random
+[![Image](https://img.shields.io/github/v/release/emipa606/PawnsChooseResearch?label=latest%20version&style=plastic&color=9f1111&labelColor=black)](https://steamcommunity.com/sharedfiles/filedetails/changelog/2904905818) | random

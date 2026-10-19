@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationSequence" MayRequire="Mlie.CallofCthulhuIndustrialAge">
+    <operations>
+      <li Class="PatchOperationAdd" MayRequire="Mlie.CallofCthulhuIndustrialAge">
+        <xpath>Defs/ResearchProjectDef[defName="Estate_TechArcLamps" or defName="Estate_TechGasLights" or defName="Estate_TechEdisonLights"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <constructionTech>1</constructionTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="Mlie.CallofCthulhuIndustrialAge">
+        <xpath>Defs/ResearchProjectDef[defName="Estate_TechCandleLights"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <miningTech>1</miningTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="Mlie.CallofCthulhuIndustrialAge">
+        <xpath>Defs/ResearchProjectDef[defName="Estate_TechWoodStoveFurnace" or defName="Estate_TechRefrigeratorBasic"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <cookingTech>1</cookingTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="Mlie.CallofCthulhuIndustrialAge">
+        <xpath>Defs/ResearchProjectDef[defName="Estate_TechMusicLow" or defName="Estate_TechMusicMed"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <artTech>1</artTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="Mlie.CallofCthulhuIndustrialAge">
+        <xpath>Defs/ResearchProjectDef[defName="Industrial_Telegraph"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <socialTech>1</socialTech>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+</Patch>

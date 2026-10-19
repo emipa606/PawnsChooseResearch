@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationSequence" MayRequire="Atlas.AndroidTiers">
+    <operations>
+      <li Class="PatchOperationAdd" MayRequire="Atlas.AndroidTiers">
+        <xpath>Defs/ResearchProjectDef[defName="ATPP_ResearchSM7" or defName="ATPP_ResearchServerI100Serie" or defName="ATPP_ResearchServerI300Serie" or defName="ATPP_ResearchServerI500Serie" or defName="ATPP_ResearchSkyCloudCore" or defName="ATPP_ResearchVX3Chip" or defName="ATPP_ResearchVX2Chip" or defName="ATPP_ResearchVX1Chip" or defName="ATPP_ResearchVX0Chip" or defName="ATPP_ResearchSkyMindWAN" or defName="ATPP_ResearchSurrogateHost" or defName="ATPP_ResearchSkyMindLAN" or defName="ATPP_ResearchCraftBasicNanoKit" or defName="ATPP_ResearchCraftIntermediateNanoKit" or defName="ATPP_ResearchCraftAdvancedNanoKit" or defName="ATPP_ResearchCraftRepairNaniteBanks"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <cyberTech>1</cyberTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="Atlas.AndroidTiers">
+        <xpath>Defs/ResearchProjectDef[defName="ATPP_ResearchSM7" or defName="ATPP_ResearchBatteryOverload" or defName="ATPP_ResearchSurrogateHost" or defName="ATPP_ResearchCraftBasicNanoKit" or defName="ATPP_ResearchCraftIntermediateNanoKit" or defName="ATPP_ResearchCraftAdvancedNanoKit" or defName="ATPP_ResearchCraftRepairNaniteBanks"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <craftTech>1</craftTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="Atlas.AndroidTiers">
+        <xpath>Defs/ResearchProjectDef[defName="ATPP_ResearchSkyCloudCore" or defName="ATPP_ResearchVX3Chip" or defName="ATPP_ResearchVX2Chip" or defName="ATPP_ResearchVX1Chip" or defName="ATPP_ResearchVX0Chip" or defName="ATPP_ResearchSkyMindWAN" or defName="ATPP_ResearchSkyMindLAN"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <socialTech>1</socialTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="Atlas.AndroidTiers">
+        <xpath>Defs/ResearchProjectDef[defName="ATPP_ResearchSkyMindLAN"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <constructionTech>1</constructionTech>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+</Patch>

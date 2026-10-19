@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationSequence" MayRequire="zymex.HospitalsExtended">
+    <operations>
+      <li Class="PatchOperationAdd" MayRequire="zymex.HospitalsExtended">
+        <xpath>Defs/ResearchProjectDef[defName="medicaddons_research_tribal_med" or defName="sd_medicaddons_research_medieval_med" or defName="sd_medicaddons_research_industrial_med" or defName="BloodIV" or defName="edicaddons_research_modern_med" or defName="" or defName="" or defName="" or defName="NutritionIV" or defName="medicaddons_research_robotic_med" or defName="ElectricalDrips" or defName="NutritionElectric" or defName="BloodElectric" or defName="sd_medicaddons_research_spacer_med"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <medTech>1</medTech>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+</Patch>

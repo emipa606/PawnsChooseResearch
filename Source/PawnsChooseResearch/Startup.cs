@@ -9,7 +9,7 @@ using Verse;
 namespace PawnsChooseResearch;
 
 [StaticConstructorOnStartup]
-public class Startup
+public static class Startup
 {
     private static int changedProjects;
     public static readonly List<ResearchProjectDef> PossibleResearchProjectDefs;
@@ -312,9 +312,9 @@ public class Startup
             if (thingDef.EverTransmitsPower)
             {
                 var powerCompProps = thingDef.GetCompProperties<CompProperties_Power>();
-                if (powerCompProps.compClass.IsInstanceOfType(typeof(CompPowerPlant)) ||
+                if (powerCompProps.compClass.IsAssignableFrom(typeof(CompPowerPlant)) ||
                     powerCompProps.compClass.IsSubclassOf(typeof(CompPowerPlant)) ||
-                    powerCompProps.compClass.IsInstanceOfType(typeof(CompPowerBattery)) ||
+                    powerCompProps.compClass.IsAssignableFrom(typeof(CompPowerBattery)) ||
                     powerCompProps.compClass.IsSubclassOf(typeof(CompPowerBattery)))
                 {
                     return ResearchType.Progress;
@@ -354,10 +354,10 @@ public class Startup
         }
 
         var harmony = new Harmony("razor2.3.PawnsDiscloseResearch");
-        foreach (var item in enumerable)
+        foreach (var owner in enumerable.Select(item => item.owner))
         {
-            LogMessage($"PDR: Belt found suspenders ({item.owner}). Re-enabling vanilla notification . . . ", true);
-            harmony.Unpatch(method, HarmonyPatchType.Prefix, item.owner);
+            LogMessage($"PDR: Belt found suspenders ({owner}). Re-enabling vanilla notification . . . ", true);
+            harmony.Unpatch(method, HarmonyPatchType.Prefix, owner);
         }
     }
 

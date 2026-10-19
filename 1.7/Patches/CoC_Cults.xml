@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationSequence" MayRequire="rimofmadness.CallofCthulhuCults">
+    <operations>
+      <li Class="PatchOperationAdd" MayRequire="rimofmadness.CallofCthulhuCults">
+        <xpath>Defs/ResearchProjectDef[defName="Forbidden_Studies"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <coreTech>1</coreTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="rimofmadness.CallofCthulhuCults">
+        <xpath>Defs/ResearchProjectDef[defName="Forbidden_Altar"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <constructionTech>1</constructionTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="rimofmadness.CallofCthulhuCults">
+        <xpath>Defs/ResearchProjectDef[defName="Forbidden_Attire"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <craftTech>1</craftTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="rimofmadness.CallofCthulhuCults">
+        <xpath>Defs/ResearchProjectDef[defName="Forbidden_Obelisks" or defName="Forbidden_Sculptures"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <artTech>1</artTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="rimofmadness.CallofCthulhuCults">
+        <xpath>Defs/ResearchProjectDef[defName="Forbidden_Lore" or defName="Forbidden_Sacrifice" or defName="Forbidden_Human"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <socialTech>1</socialTech>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+</Patch>

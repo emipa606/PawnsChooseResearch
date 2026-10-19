@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- or defName=""-->
+  <Operation Class="PatchOperationSequence" MayRequire="Roo.AntyRaceMod">
+    <!--<success>Always</success>-->
+    <operations>
+      <li Class="PatchOperationAdd" MayRequire="Roo.AntyRaceMod">
+        <xpath>Defs/ResearchProjectDef[defName="Earlycolony"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <coreTech>1</coreTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="Roo.AntyRaceMod">
+        <xpath>Defs/ResearchProjectDef[defName="AntyAcidweapon_B" or defName="AntyAcidweapon_C" or defName="AntyAcidweapon_D" or defName="Antycomposite" or defName="hydroheliumion" or defName="Combatglue" or defName="hydroheliumion_B"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <rangedTech>1</rangedTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="Roo.AntyRaceMod">
+        <xpath>Defs/ResearchProjectDef[defName="Antycomposite_B" or defName="AT_Forwardbase_A"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <meleeTech>1</meleeTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="Roo.AntyRaceMod">
+        <xpath>Defs/ResearchProjectDef[defName="Earlycolony" or defName="Largecolony"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <constructionTech>1</constructionTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="Roo.AntyRaceMod">
+        <xpath>Defs/ResearchProjectDef[defName="AntyNutritionaljelly" or defName="AntyMassiveButchering"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <cookingTech>1</cookingTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="Roo.AntyRaceMod">
+        <xpath>Defs/ResearchProjectDef[defName="AntyMachining" or defName="AntyClothing" or defName="Mediumcolony" or defName="Combatglue" or defName="Antycomposite"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <craftTech>1</craftTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="Roo.AntyRaceMod">
+        <xpath>Defs/ResearchProjectDef[defName="AntyAphidextract" or defName="Superregenerationdevice" or defName="AT_IncreasedviabilitySurgery"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <medTech>1</medTech>
+          <cyberTech>1</cyberTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="Roo.AntyRaceMod">
+        <xpath>Defs/ResearchProjectDef[defName="Antypheromonestim"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <medTech>1</medTech>
+          <drugTech>1</drugTech>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+</Patch>

@@ -219,7 +219,7 @@ public class ResearchCategory : DefModExtension
             $"{researchProjectDef.label}'s cyberTech score is {researchProjectDef.GetModExtension<ResearchCategory>().cyberTech}");
     }
 
-    private static void CECheck()
+    public static void CECheck()
     {
         var list = new List<ResearchProjectDef>
         {

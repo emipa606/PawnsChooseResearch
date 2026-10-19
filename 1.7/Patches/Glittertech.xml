@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationSequence" MayRequire="GT.Sam.GlitterTech">
+    <operations>
+      <li Class="PatchOperationAdd" MayRequire="GT.Sam.GlitterTech">
+        <xpath>Defs/ResearchProjectDef[defName="MetalFab" or defName="TWindows" or defName="DynElect" or defName="ElectroPlasmatics"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <constructionTech>1</constructionTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="GT.Sam.GlitterTech">
+        <xpath>Defs/ResearchProjectDef[defName="EMRGDefense"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <rangedTech>1</rangedTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="GT.Sam.GlitterTech">
+        <xpath>Defs/ResearchProjectDef[defName="AdvancedArmor"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <meleeTech>1</meleeTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="GT.Sam.GlitterTech">
+        <xpath>Defs/ResearchProjectDef[defName="TLights" or defName="AdvancedFact" or defName="RoboticEngineering"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <craftTech>1</craftTech>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd" MayRequire="GT.Sam.GlitterTech">
+        <xpath>Defs/ResearchProjectDef[defName="Electrolysis" or defName="Pharmaceuticals"]/modExtensions/li[@Class="PawnsChooseResearch.ResearchCategory"]</xpath>
+        <value>
+          <medTech>1</medTech>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+</Patch>
